@@ -15,9 +15,10 @@ import matplotlib.pyplot as plt
 import scipy.sparse as sparse
 
 #ruta = r"C:/Users/BraianSoullier/Desktop/TAMIUSOULLIER/FAUBA_190904/Code/imgOrig.png"
-ruta = "fauba_01.png"
-imgOrig = cv2.imread(ruta)
-pars = np.load('usbCamPars.npy',allow_pickle=True).item()
+path="/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/CorrecDeDist/"
+photo = "fauba_01.png"
+imgOrig = cv2.imread(path+photo)
+pars = np.load(path+'usbCamPars.npy',allow_pickle=True).item()
 
 
 #%% Corrigo distorción de imagen con parametros de la camara sacados en del script "calibracion.py"
@@ -28,5 +29,5 @@ plt.imshow(imgOrig[:,:,::-1])
 plt.figure()
 plt.imshow(imgEdit[:,:,::-1])
 
-plt.imsave('/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/ClasVerde/fauba_edit.jpg',imgEdit[:,:,::-1])
-plt.imsave('/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/ClasVerde/fauba_edit.jpg',imgEdit[:,:,::-1])
+plt.imsave('/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/ClasVerde/Edit_new.jpg',imgEdit[:,:,::-1])
+#plt.imsave('/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/ClasVerde/fauba_edit.jpg',imgEdit[:,:,::-1])

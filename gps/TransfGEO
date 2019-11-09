@@ -23,11 +23,11 @@ v0=p0[1]
 lat0_deg=p0[2]
 lon0_deg=p0[3]
 
-img=cv2.imread("/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/gps/fauba_edit.jpg", cv2.IMREAD_GRAYSCALE)
-plt.figure('Seleccionar campo de trabajo')
+img=cv2.imread("/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/gps/fauba_edit.jpg", cv2.IMREAD_GRAYSCALE)
+plt.figure('Select interest point')
 plt.imshow(img,'gray')
 
-print('ELegir un punto de interés:\t\n',end=' ')
+print('Select interest point:\t\n',end=' ')
 cy1,cx1=np.array(np.round(plt.ginput()[0]),dtype=np.int32)
 
 vec=np.array([[cx1],[cy1],[cx1*cy1],[1]])
@@ -38,9 +38,9 @@ Y_mundo=Coord_Mundo[1][0]
 
 print('Latitud y longitud :\t\n', Coord_Mundo)
 
-# %%
-#geodetic
+# %%            Geodetic              
 
+print('Geodetic\n')
 a = 6378.1370#Equatorial radius in km
 b = 6356.7523#Polar radius in km
 
@@ -61,15 +61,16 @@ deltaX=(dlon*cos(lat0)*Rn)/sin(theta) # en metros
 deltaY=(dlat*Rm)/sin(theta)#cos(theta) # en metros
 
 dist=np.linalg.norm([deltaX,deltaY]) # en metros
-print('la distancia es {:.4f}\n en x {:.4f} \n en y {:.4f}'.format(dist,deltaX,deltaY))
+print('Distance to interest point is {:.4f} meter(s) \n X: {:.4f} meter(s)\n Y: {:.4f} meter(s)'.format(dist,deltaX,deltaY))
 
 #ct = cos(Xpost.T[2])#de theta
 #st = sin(Xpost.T[2])#de theta
 #deltaX =array([Vdt * ct/Rm , Vdt * st/(clRn),
 
 # %%
-#Elipsoidal Earth projected to a plane
+#                Elipsoidal Earth projected to a plane              
 
+print('Elipsoidal Earth projected to a plane\n')
 a = 6378.1370#Equatorial radius in km
 b = 6356.7523#Polar radius in km
 
@@ -88,7 +89,12 @@ K2=111.41513*cos((lat1+lat0)/2)-0.09455*cos((3*(lat1+lat0))/2)+0.00012*cos((5*(l
 deltaY2=(K1*(lat1-lat0)*(180/pi))**2
 deltaX2=(K2*(lon1-lon0)*(180/pi))**2
 
-D=np.sqrt(deltaX2+deltaY2)*1000
+dist=np.sqrt(deltaX2+deltaY2)*1000 # meters
+deltaX=np.sqrt(deltaX2)*1000 # meters
+deltaY=np.sqrt(deltaY2)*1000 # meters
+
+print('Distance to interest point is {:.4f} meter(s)\n X: {:.4f} meter(s)\n Y: {:.4f} meter(s)'.format(dist,deltaX,deltaY))
+
 #
 #dlat= lat1-lat0
 #dlon= lon1-lon0

@@ -13,8 +13,10 @@ from numpy import savetxt
 import matplotlib.pyplot as plt
 
 # ruta = r"C:\Users\BraianSoullier\Desktop\TAMIUSOULLIER\SCRIPS\ClasVerde\imgEdit.jpg"
-ruta = "fauba_edit.jpg"
-imgT = cv2.imread(ruta)
+path="/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/ClasVerde/"
+
+photo = "Edit_new.jpg"
+imgT = cv2.imread(path+photo)
 
 # %% Color verde en RGB
 
@@ -39,10 +41,14 @@ y1,x1=np.array(np.round(plt.ginput()[0]),dtype=np.int32)
 print('esquina 1:\t',end=' ')
 y2,x2=np.array(np.round(plt.ginput()[0]),dtype=np.int32)
 
-
+recorte2=imgT[x1:x2,y1:y2]
 recorte=imgNew.T[x1:x2,y1:y2]
 
-plt.imsave("/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/FloodAlgorim/santiago.jpg",recorte)
+
+#plt.imsave("/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/FloodAlgorim/santiago.jpg",recorte)
+#plt.imsave("/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/Hough/RGB_2.jpg",recorte2)
+#plt.imsave("/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/Hough/GI_2.jpg",recorte)
+
 
 recorte = np.uint8(255*(recorte-recorte.min()) / (recorte.max()-recorte.min()))
 plt.figure()
@@ -85,32 +91,40 @@ plt.imshow(imgB)
 
 
 # %%
-res = np.array(res)
-
-alfa = res.T[-1]
-width = res.T[2]
-height= res.T[3]
-plt.figure('alpha_v_Width')
-plt.scatter(alfa,width,alpha=0.4)
-plt.figure('height_v_width')
-plt.scatter(height,width,alpha=0.4)
-
-# plt.figure('alpha')
+#res = np.array(res)
+#
+#alfa = res.T[-1]
+#width = res.T[2]
+#height= res.T[3]
+#plt.figure('alpha_v_Width')
+#plt.scatter(alfa,width,alpha=0.4)
+#plt.figure('height_v_width')
+#plt.scatter(height,width,alpha=0.4)
+#
+## plt.figure('alpha')
 # plt.hist(alfa,50)
 # plt.figure('w')
 # plt.hist(width,50)
 # plt.figure('h')
 # plt.hist(height,50)
 #%%
-plt.figure('ar')
-ar = width / height
-ar = np.array([1/a if a>1 else a for a in ar  ])
+#plt.figure('ar')
+#ar = width / height
+#ar = np.array([1/a if a>1 else a for a in ar  ])
+#
+#plt.hist(ar,50)
 
-plt.hist(ar,50)
+#%%       Clahe             
+
+clahe = cv2.createCLAHE(clipLimit=3,tileGridSize=(35,60))
+recorteN =clahe.apply(recorte)
+plt.imshow(np.hstack([recorte,recorteN]))
+#plt.hist(recorte.reshape(-1),50)
+#RET,imgB=cv2.threshold(recorteN,130,255,0)
+RET,imgB=cv2.threshold(recorteN,0,255,cv2.THRESH_OTSU)
+
 
 #%%
-
-
 # #%% Seleccionar donde hay cultivo en CRECIMIENTO
 
 # plt.figure()

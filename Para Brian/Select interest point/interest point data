@@ -1,0 +1,18 @@
+Select interest point (coordinates of interest poiint):  
+ Latitud y longitud :    
+ [[-34.59297919]
+ [-58.48464917]]
+
+
+Geodetic - one method
+
+Distance to interest point is 66.0230 meter(s) 
+ X: 63.2814 meter(s)
+ Y: 18.8283 meter(s)
+
+
+Elipsoidal Earth projected to a plane - another method
+
+Distance to interest point is 64.1121 meter(s)
+ X: 61.4501 meter(s)
+ Y: 18.2825 meter(s)

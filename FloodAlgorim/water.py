@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 # %%
 
-path="/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/FloodAlgorim"
+path="/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/FloodAlgorim/"
 #file= "/campoCortado.jpg"
 #file= "/frame4.jpg"
 file="/indexGreen.jpg"

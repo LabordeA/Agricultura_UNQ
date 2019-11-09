@@ -10,19 +10,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #%% Seleccionar campo 
-img=cv2.imread("/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/gps/fauba_edit.jpg", cv2.IMREAD_GRAYSCALE)
+img=cv2.imread("/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/gps/fauba_edit.jpg", cv2.IMREAD_GRAYSCALE)
 
-plt.figure('Seleccionar campo de trabajo')
+plt.figure('Select your work area')
 plt.imshow(img,'gray')
 
-print('esquina superior derecha:\t\n',end=' ')
+print(' Press upper rigth corner:\n',end=' ')
 y1,x1=np.array(np.round(plt.ginput()[0]),dtype=np.int32)
-print('esquina inferior derecha:\t\n',end=' ')
+print('Press lower rigth corner:\n',end=' ')
 y2,x2=np.array(np.round(plt.ginput()[0]),dtype=np.int32)
-print('esquina superior izquierda:\t\n',end=' ')
+print('Press upper left corner:\n',end=' ')
 y3,x3=np.array(np.round(plt.ginput()[0]),dtype=np.int32)
-
-print('esquina inferior izquierda:\t\n',end=' ')
+print('Press lower left corner:\n',end=' ')
 y4,x4=np.array(np.round(plt.ginput()[0]),dtype=np.int32)
 
 lisX=[]
@@ -46,7 +45,7 @@ recorte=img[min(lisX):max(lisX),min(lisY):max(lisY)]
 #
 #recorte = np.uint8(255*(recorte-recorte.min()) / (recorte.max()-recorte.min()))
 
-plt.figure('Campo de trabajo')
+plt.figure('Work area')
 plt.imshow(recorte,'gray')
 plt.imsave("campoCortado.jpg",recorte)
 # %%
@@ -82,6 +81,5 @@ X_pinv=np.linalg.pinv(X)
 A=np.dot(L,X_pinv)
 
 p0_l=[u4,v4,lat4,lon4]
-np.save('p0_l.npy',p0_l)
-
-np.save('tl.npy',A)
+np.save('/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/gps/p0_l.npy',p0_l)
+np.save('/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/gps/tl.npy',A)
