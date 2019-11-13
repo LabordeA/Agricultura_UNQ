@@ -1,0 +1,708 @@
+1
+00:00:00,000 --> 00:00:00,033
+<font size="36">FrameCnt : 1, DiffTime : 33ms
+2019-11-06 08:33:50,714,899
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+2
+00:00:00,033 --> 00:00:00,066
+<font size="36">FrameCnt : 2, DiffTime : 33ms
+2019-11-06 08:33:50,748,269
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+3
+00:00:00,066 --> 00:00:00,100
+<font size="36">FrameCnt : 3, DiffTime : 34ms
+2019-11-06 08:33:50,781,631
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+4
+00:00:00,100 --> 00:00:00,133
+<font size="36">FrameCnt : 4, DiffTime : 33ms
+2019-11-06 08:33:50,815,006
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+5
+00:00:00,133 --> 00:00:00,166
+<font size="36">FrameCnt : 5, DiffTime : 33ms
+2019-11-06 08:33:50,848,365
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+6
+00:00:00,166 --> 00:00:00,200
+<font size="36">FrameCnt : 6, DiffTime : 34ms
+2019-11-06 08:33:50,881,736
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+7
+00:00:00,200 --> 00:00:00,233
+<font size="36">FrameCnt : 7, DiffTime : 33ms
+2019-11-06 08:33:50,915,099
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+8
+00:00:00,233 --> 00:00:00,266
+<font size="36">FrameCnt : 8, DiffTime : 33ms
+2019-11-06 08:33:50,948,467
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+9
+00:00:00,266 --> 00:00:00,300
+<font size="36">FrameCnt : 9, DiffTime : 34ms
+2019-11-06 08:33:50,981,859
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+10
+00:00:00,300 --> 00:00:00,333
+<font size="36">FrameCnt : 10, DiffTime : 33ms
+2019-11-06 08:33:51,015,202
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+11
+00:00:00,333 --> 00:00:00,367
+<font size="36">FrameCnt : 11, DiffTime : 34ms
+2019-11-06 08:33:51,048,564
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+12
+00:00:00,367 --> 00:00:00,400
+<font size="36">FrameCnt : 12, DiffTime : 33ms
+2019-11-06 08:33:51,081,933
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+13
+00:00:00,400 --> 00:00:00,433
+<font size="36">FrameCnt : 13, DiffTime : 33ms
+2019-11-06 08:33:51,115,309
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+14
+00:00:00,433 --> 00:00:00,467
+<font size="36">FrameCnt : 14, DiffTime : 34ms
+2019-11-06 08:33:51,148,666
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+15
+00:00:00,467 --> 00:00:00,500
+<font size="36">FrameCnt : 15, DiffTime : 33ms
+2019-11-06 08:33:51,182,034
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+16
+00:00:00,500 --> 00:00:00,533
+<font size="36">FrameCnt : 16, DiffTime : 33ms
+2019-11-06 08:33:51,215,399
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+17
+00:00:00,533 --> 00:00:00,567
+<font size="36">FrameCnt : 17, DiffTime : 34ms
+2019-11-06 08:33:51,248,766
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+18
+00:00:00,567 --> 00:00:00,600
+<font size="36">FrameCnt : 18, DiffTime : 33ms
+2019-11-06 08:33:51,282,137
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+19
+00:00:00,600 --> 00:00:00,633
+<font size="36">FrameCnt : 19, DiffTime : 33ms
+2019-11-06 08:33:51,315,504
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+20
+00:00:00,633 --> 00:00:00,667
+<font size="36">FrameCnt : 20, DiffTime : 34ms
+2019-11-06 08:33:51,348,869
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+21
+00:00:00,667 --> 00:00:00,700
+<font size="36">FrameCnt : 21, DiffTime : 33ms
+2019-11-06 08:33:51,382,234
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+22
+00:00:00,700 --> 00:00:00,734
+<font size="36">FrameCnt : 22, DiffTime : 34ms
+2019-11-06 08:33:51,415,599
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+23
+00:00:00,734 --> 00:00:00,767
+<font size="36">FrameCnt : 23, DiffTime : 33ms
+2019-11-06 08:33:51,448,966
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+24
+00:00:00,767 --> 00:00:00,800
+<font size="36">FrameCnt : 24, DiffTime : 33ms
+2019-11-06 08:33:51,482,333
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+25
+00:00:00,800 --> 00:00:00,834
+<font size="36">FrameCnt : 25, DiffTime : 34ms
+2019-11-06 08:33:51,515,707
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+26
+00:00:00,834 --> 00:00:00,867
+<font size="36">FrameCnt : 26, DiffTime : 33ms
+2019-11-06 08:33:51,549,069
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+27
+00:00:00,867 --> 00:00:00,900
+<font size="36">FrameCnt : 27, DiffTime : 33ms
+2019-11-06 08:33:51,582,434
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+28
+00:00:00,900 --> 00:00:00,934
+<font size="36">FrameCnt : 28, DiffTime : 34ms
+2019-11-06 08:33:51,615,802
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+29
+00:00:00,934 --> 00:00:00,967
+<font size="36">FrameCnt : 29, DiffTime : 33ms
+2019-11-06 08:33:51,649,169
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+30
+00:00:00,967 --> 00:00:01,001
+<font size="36">FrameCnt : 30, DiffTime : 34ms
+2019-11-06 08:33:51,682,533
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+31
+00:00:01,001 --> 00:00:01,034
+<font size="36">FrameCnt : 31, DiffTime : 33ms
+2019-11-06 08:33:51,715,901
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+32
+00:00:01,034 --> 00:00:01,067
+<font size="36">FrameCnt : 32, DiffTime : 33ms
+2019-11-06 08:33:51,749,276
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+33
+00:00:01,067 --> 00:00:01,101
+<font size="36">FrameCnt : 33, DiffTime : 34ms
+2019-11-06 08:33:51,782,634
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+34
+00:00:01,101 --> 00:00:01,134
+<font size="36">FrameCnt : 34, DiffTime : 33ms
+2019-11-06 08:33:51,816,001
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+35
+00:00:01,134 --> 00:00:01,167
+<font size="36">FrameCnt : 35, DiffTime : 33ms
+2019-11-06 08:33:51,849,379
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484737] </font>
+
+36
+00:00:01,167 --> 00:00:01,201
+<font size="36">FrameCnt : 36, DiffTime : 34ms
+2019-11-06 08:33:51,882,740
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+37
+00:00:01,201 --> 00:00:01,234
+<font size="36">FrameCnt : 37, DiffTime : 33ms
+2019-11-06 08:33:51,916,103
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+38
+00:00:01,234 --> 00:00:01,267
+<font size="36">FrameCnt : 38, DiffTime : 33ms
+2019-11-06 08:33:51,949,509
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+39
+00:00:01,267 --> 00:00:01,301
+<font size="36">FrameCnt : 39, DiffTime : 34ms
+2019-11-06 08:33:51,982,835
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+40
+00:00:01,301 --> 00:00:01,334
+<font size="36">FrameCnt : 40, DiffTime : 33ms
+2019-11-06 08:33:52,016,202
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+41
+00:00:01,334 --> 00:00:01,368
+<font size="36">FrameCnt : 41, DiffTime : 34ms
+2019-11-06 08:33:52,049,567
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+42
+00:00:01,368 --> 00:00:01,401
+<font size="36">FrameCnt : 42, DiffTime : 33ms
+2019-11-06 08:33:52,082,940
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+43
+00:00:01,401 --> 00:00:01,434
+<font size="36">FrameCnt : 43, DiffTime : 33ms
+2019-11-06 08:33:52,116,303
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+44
+00:00:01,434 --> 00:00:01,468
+<font size="36">FrameCnt : 44, DiffTime : 34ms
+2019-11-06 08:33:52,149,673
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+45
+00:00:01,468 --> 00:00:01,501
+<font size="36">FrameCnt : 45, DiffTime : 33ms
+2019-11-06 08:33:52,183,036
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+46
+00:00:01,501 --> 00:00:01,534
+<font size="36">FrameCnt : 46, DiffTime : 33ms
+2019-11-06 08:33:52,216,403
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+47
+00:00:01,534 --> 00:00:01,568
+<font size="36">FrameCnt : 47, DiffTime : 34ms
+2019-11-06 08:33:52,249,770
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+48
+00:00:01,568 --> 00:00:01,601
+<font size="36">FrameCnt : 48, DiffTime : 33ms
+2019-11-06 08:33:52,283,138
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+49
+00:00:01,601 --> 00:00:01,634
+<font size="36">FrameCnt : 49, DiffTime : 33ms
+2019-11-06 08:33:52,316,506
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+50
+00:00:01,634 --> 00:00:01,668
+<font size="36">FrameCnt : 50, DiffTime : 34ms
+2019-11-06 08:33:52,349,876
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+51
+00:00:01,668 --> 00:00:01,701
+<font size="36">FrameCnt : 51, DiffTime : 33ms
+2019-11-06 08:33:52,383,235
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+52
+00:00:01,701 --> 00:00:01,735
+<font size="36">FrameCnt : 52, DiffTime : 34ms
+2019-11-06 08:33:52,416,603
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+53
+00:00:01,735 --> 00:00:01,768
+<font size="36">FrameCnt : 53, DiffTime : 33ms
+2019-11-06 08:33:52,449,973
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+54
+00:00:01,768 --> 00:00:01,801
+<font size="36">FrameCnt : 54, DiffTime : 33ms
+2019-11-06 08:33:52,483,338
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+55
+00:00:01,801 --> 00:00:01,835
+<font size="36">FrameCnt : 55, DiffTime : 34ms
+2019-11-06 08:33:52,516,704
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593143] [longtitude : -58.484738] </font>
+
+56
+00:00:01,835 --> 00:00:01,868
+<font size="36">FrameCnt : 56, DiffTime : 33ms
+2019-11-06 08:33:52,550,070
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593144] [longtitude : -58.484739] </font>
+
+57
+00:00:01,868 --> 00:00:01,901
+<font size="36">FrameCnt : 57, DiffTime : 33ms
+2019-11-06 08:33:52,583,442
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593144] [longtitude : -58.484739] </font>
+
+58
+00:00:01,901 --> 00:00:01,935
+<font size="36">FrameCnt : 58, DiffTime : 34ms
+2019-11-06 08:33:52,616,805
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593144] [longtitude : -58.484739] </font>
+
+59
+00:00:01,935 --> 00:00:01,968
+<font size="36">FrameCnt : 59, DiffTime : 33ms
+2019-11-06 08:33:52,650,170
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593144] [longtitude : -58.484739] </font>
+
+60
+00:00:01,968 --> 00:00:02,002
+<font size="36">FrameCnt : 60, DiffTime : 34ms
+2019-11-06 08:33:52,683,535
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593144] [longtitude : -58.484739] </font>
+
+61
+00:00:02,002 --> 00:00:02,035
+<font size="36">FrameCnt : 61, DiffTime : 33ms
+2019-11-06 08:33:52,716,906
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593144] [longtitude : -58.484739] </font>
+
+62
+00:00:02,035 --> 00:00:02,068
+<font size="36">FrameCnt : 62, DiffTime : 33ms
+2019-11-06 08:33:52,750,271
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593145] [longtitude : -58.484739] </font>
+
+63
+00:00:02,068 --> 00:00:02,102
+<font size="36">FrameCnt : 63, DiffTime : 34ms
+2019-11-06 08:33:52,783,638
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593145] [longtitude : -58.484739] </font>
+
+64
+00:00:02,102 --> 00:00:02,135
+<font size="36">FrameCnt : 64, DiffTime : 33ms
+2019-11-06 08:33:52,817,005
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593145] [longtitude : -58.484739] </font>
+
+65
+00:00:02,135 --> 00:00:02,168
+<font size="36">FrameCnt : 65, DiffTime : 33ms
+2019-11-06 08:33:52,850,372
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593146] [longtitude : -58.484739] </font>
+
+66
+00:00:02,168 --> 00:00:02,202
+<font size="36">FrameCnt : 66, DiffTime : 34ms
+2019-11-06 08:33:52,883,737
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593146] [longtitude : -58.484739] </font>
+
+67
+00:00:02,202 --> 00:00:02,235
+<font size="36">FrameCnt : 67, DiffTime : 33ms
+2019-11-06 08:33:52,917,106
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593146] [longtitude : -58.484739] </font>
+
+68
+00:00:02,235 --> 00:00:02,268
+<font size="36">FrameCnt : 68, DiffTime : 33ms
+2019-11-06 08:33:52,950,506
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593146] [longtitude : -58.484739] </font>
+
+69
+00:00:02,268 --> 00:00:02,302
+<font size="36">FrameCnt : 69, DiffTime : 34ms
+2019-11-06 08:33:52,983,838
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593147] [longtitude : -58.484739] </font>
+
+70
+00:00:02,302 --> 00:00:02,335
+<font size="36">FrameCnt : 70, DiffTime : 33ms
+2019-11-06 08:33:53,017,206
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593147] [longtitude : -58.484739] </font>
+
+71
+00:00:02,335 --> 00:00:02,369
+<font size="36">FrameCnt : 71, DiffTime : 34ms
+2019-11-06 08:33:53,050,570
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593148] [longtitude : -58.484739] </font>
+
+72
+00:00:02,369 --> 00:00:02,402
+<font size="36">FrameCnt : 72, DiffTime : 33ms
+2019-11-06 08:33:53,083,939
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593148] [longtitude : -58.484739] </font>
+
+73
+00:00:02,402 --> 00:00:02,435
+<font size="36">FrameCnt : 73, DiffTime : 33ms
+2019-11-06 08:33:53,117,306
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593148] [longtitude : -58.484739] </font>
+
+74
+00:00:02,435 --> 00:00:02,469
+<font size="36">FrameCnt : 74, DiffTime : 34ms
+2019-11-06 08:33:53,150,671
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593148] [longtitude : -58.484739] </font>
+
+75
+00:00:02,469 --> 00:00:02,502
+<font size="36">FrameCnt : 75, DiffTime : 33ms
+2019-11-06 08:33:53,184,039
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593149] [longtitude : -58.484739] </font>
+
+76
+00:00:02,502 --> 00:00:02,535
+<font size="36">FrameCnt : 76, DiffTime : 33ms
+2019-11-06 08:33:53,217,405
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593149] [longtitude : -58.484739] </font>
+
+77
+00:00:02,535 --> 00:00:02,569
+<font size="36">FrameCnt : 77, DiffTime : 34ms
+2019-11-06 08:33:53,250,773
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593150] [longtitude : -58.484739] </font>
+
+78
+00:00:02,569 --> 00:00:02,602
+<font size="36">FrameCnt : 78, DiffTime : 33ms
+2019-11-06 08:33:53,284,139
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593150] [longtitude : -58.484739] </font>
+
+79
+00:00:02,602 --> 00:00:02,635
+<font size="36">FrameCnt : 79, DiffTime : 33ms
+2019-11-06 08:33:53,317,508
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593150] [longtitude : -58.484739] </font>
+
+80
+00:00:02,635 --> 00:00:02,669
+<font size="36">FrameCnt : 80, DiffTime : 34ms
+2019-11-06 08:33:53,350,872
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593151] [longtitude : -58.484739] </font>
+
+81
+00:00:02,669 --> 00:00:02,702
+<font size="36">FrameCnt : 81, DiffTime : 33ms
+2019-11-06 08:33:53,384,239
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593151] [longtitude : -58.484739] </font>
+
+82
+00:00:02,702 --> 00:00:02,736
+<font size="36">FrameCnt : 82, DiffTime : 34ms
+2019-11-06 08:33:53,417,605
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593151] [longtitude : -58.484739] </font>
+
+83
+00:00:02,736 --> 00:00:02,769
+<font size="36">FrameCnt : 83, DiffTime : 33ms
+2019-11-06 08:33:53,450,972
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593151] [longtitude : -58.484739] </font>
+
+84
+00:00:02,769 --> 00:00:02,802
+<font size="36">FrameCnt : 84, DiffTime : 33ms
+2019-11-06 08:33:53,484,339
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593152] [longtitude : -58.484739] </font>
+
+85
+00:00:02,802 --> 00:00:02,836
+<font size="36">FrameCnt : 85, DiffTime : 34ms
+2019-11-06 08:33:53,517,705
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593152] [longtitude : -58.484739] </font>
+
+86
+00:00:02,836 --> 00:00:02,869
+<font size="36">FrameCnt : 86, DiffTime : 33ms
+2019-11-06 08:33:53,551,071
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593152] [longtitude : -58.484739] </font>
+
+87
+00:00:02,869 --> 00:00:02,902
+<font size="36">FrameCnt : 87, DiffTime : 33ms
+2019-11-06 08:33:53,584,438
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593152] [longtitude : -58.484739] </font>
+
+88
+00:00:02,902 --> 00:00:02,936
+<font size="36">FrameCnt : 88, DiffTime : 34ms
+2019-11-06 08:33:53,617,807
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593152] [longtitude : -58.484739] </font>
+
+89
+00:00:02,936 --> 00:00:02,969
+<font size="36">FrameCnt : 89, DiffTime : 33ms
+2019-11-06 08:33:53,651,176
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593153] [longtitude : -58.484739] </font>
+
+90
+00:00:02,969 --> 00:00:03,003
+<font size="36">FrameCnt : 90, DiffTime : 34ms
+2019-11-06 08:33:53,684,538
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593153] [longtitude : -58.484739] </font>
+
+91
+00:00:03,003 --> 00:00:03,036
+<font size="36">FrameCnt : 91, DiffTime : 33ms
+2019-11-06 08:33:53,717,909
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593153] [longtitude : -58.484739] </font>
+
+92
+00:00:03,036 --> 00:00:03,069
+<font size="36">FrameCnt : 92, DiffTime : 33ms
+2019-11-06 08:33:53,751,273
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593154] [longtitude : -58.484739] </font>
+
+93
+00:00:03,069 --> 00:00:03,103
+<font size="36">FrameCnt : 93, DiffTime : 34ms
+2019-11-06 08:33:53,784,661
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593154] [longtitude : -58.484739] </font>
+
+94
+00:00:03,103 --> 00:00:03,136
+<font size="36">FrameCnt : 94, DiffTime : 33ms
+2019-11-06 08:33:53,818,007
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593154] [longtitude : -58.484739] </font>
+
+95
+00:00:03,136 --> 00:00:03,169
+<font size="36">FrameCnt : 95, DiffTime : 33ms
+2019-11-06 08:33:53,851,374
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593154] [longtitude : -58.484740] </font>
+
+96
+00:00:03,169 --> 00:00:03,203
+<font size="36">FrameCnt : 96, DiffTime : 34ms
+2019-11-06 08:33:53,884,741
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593154] [longtitude : -58.484740] </font>
+
+97
+00:00:03,203 --> 00:00:03,236
+<font size="36">FrameCnt : 97, DiffTime : 33ms
+2019-11-06 08:33:53,918,109
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593154] [longtitude : -58.484740] </font>
+
+98
+00:00:03,236 --> 00:00:03,269
+<font size="36">FrameCnt : 98, DiffTime : 33ms
+2019-11-06 08:33:53,951,499
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+99
+00:00:03,269 --> 00:00:03,303
+<font size="36">FrameCnt : 99, DiffTime : 34ms
+2019-11-06 08:33:53,984,847
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+100
+00:00:03,303 --> 00:00:03,336
+<font size="36">FrameCnt : 100, DiffTime : 33ms
+2019-11-06 08:33:54,018,208
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+101
+00:00:03,336 --> 00:00:03,370
+<font size="36">FrameCnt : 101, DiffTime : 34ms
+2019-11-06 08:33:54,051,573
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+102
+00:00:03,370 --> 00:00:03,403
+<font size="36">FrameCnt : 102, DiffTime : 33ms
+2019-11-06 08:33:54,084,941
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+103
+00:00:03,403 --> 00:00:03,436
+<font size="36">FrameCnt : 103, DiffTime : 33ms
+2019-11-06 08:33:54,118,316
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+104
+00:00:03,436 --> 00:00:03,470
+<font size="36">FrameCnt : 104, DiffTime : 34ms
+2019-11-06 08:33:54,151,673
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+105
+00:00:03,470 --> 00:00:03,503
+<font size="36">FrameCnt : 105, DiffTime : 33ms
+2019-11-06 08:33:54,185,044
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+106
+00:00:03,503 --> 00:00:03,536
+<font size="36">FrameCnt : 106, DiffTime : 33ms
+2019-11-06 08:33:54,218,408
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+107
+00:00:03,536 --> 00:00:03,570
+<font size="36">FrameCnt : 107, DiffTime : 34ms
+2019-11-06 08:33:54,251,776
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+108
+00:00:03,570 --> 00:00:03,603
+<font size="36">FrameCnt : 108, DiffTime : 33ms
+2019-11-06 08:33:54,285,144
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+109
+00:00:03,603 --> 00:00:03,636
+<font size="36">FrameCnt : 109, DiffTime : 33ms
+2019-11-06 08:33:54,318,507
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+110
+00:00:03,636 --> 00:00:03,670
+<font size="36">FrameCnt : 110, DiffTime : 34ms
+2019-11-06 08:33:54,351,878
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+111
+00:00:03,670 --> 00:00:03,703
+<font size="36">FrameCnt : 111, DiffTime : 33ms
+2019-11-06 08:33:54,385,243
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+112
+00:00:03,703 --> 00:00:03,737
+<font size="36">FrameCnt : 112, DiffTime : 34ms
+2019-11-06 08:33:54,418,609
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+113
+00:00:03,737 --> 00:00:03,770
+<font size="36">FrameCnt : 113, DiffTime : 33ms
+2019-11-06 08:33:54,451,977
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+114
+00:00:03,770 --> 00:00:03,803
+<font size="36">FrameCnt : 114, DiffTime : 33ms
+2019-11-06 08:33:54,485,345
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+115
+00:00:03,803 --> 00:00:03,837
+<font size="36">FrameCnt : 115, DiffTime : 34ms
+2019-11-06 08:33:54,518,710
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+116
+00:00:03,837 --> 00:00:03,870
+<font size="36">FrameCnt : 116, DiffTime : 33ms
+2019-11-06 08:33:54,552,078
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+117
+00:00:03,870 --> 00:00:03,903
+<font size="36">FrameCnt : 117, DiffTime : 33ms
+2019-11-06 08:33:54,585,444
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+
+118
+00:00:03,903 --> 00:00:03,937
+<font size="36">FrameCnt : 118, DiffTime : 34ms
+2019-11-06 08:33:54,618,808
+[iso : 100] [shutter : 1/160.0] [fnum : 280] [ev : 2.7] [ct : 5200] [color_md : hlg] [latitude : -34.593155] [longtitude : -58.484740] </font>
+

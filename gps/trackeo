@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # %%
-path 	= '/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/gps/'
+path 	= '/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/gps/'
 
 dt_frames=glob.glob(path+'CSV/*.csv')
 videos=glob.glob(path+'VIDEOS/*.MP4')
@@ -51,20 +51,21 @@ videos=glob.glob(path+'VIDEOS/*.MP4')
 # Print de las coordenadas en el mundo de un punto de interes en la imagen
 
 A=np.load('tl.npy')
-img=cv2.imread("/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/gps/fauba_edit.jpg", cv2.IMREAD_GRAYSCALE)
-plt.figure('Select interest point ')
+img=cv2.imread("/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/gps/fauba_edit.jpg", cv2.IMREAD_GRAYSCALE)
+plt.figure('Elegir Punto de interes ')
 plt.imshow(img,'gray')
 
-print('Select interest point:\t\n',end=' ')
+print('ELegir un punto de interés:\t\n',end=' ')
 cy1,cx1=np.array(np.round(plt.ginput()[0]),dtype=np.int32)
+
 vec=np.array([[cx1],[cy1],[cx1*cy1],[1]])
 
 Coord_Mundo=np.dot(A,vec)
 X_mundo=Coord_Mundo[0][0]
 Y_mundo=Coord_Mundo[1][0]
 
-print(' Latitude:', Coord_Mundo[0][0])
-print(' Longitude:', Coord_Mundo[1][0])
+
+print('Latitud y longitud :\t\n', Coord_Mundo)
 
 # %% Referenciar el punto de interes a un Frame del video para buscar la foto ampliada
 framesInterest =[]
@@ -84,7 +85,7 @@ if graficoGPS:
 
 for dff,vidf in zip(dt_frames,videos):
 	
-	print(num, ' de ', len(dt_frames)-1)
+	print(num, ' de ', len(dt_frames))
 	print(dt_frames[num][58:len(dt_frames[num])])
 	
 	df_subt = pd.read_csv(dff)
@@ -108,7 +109,7 @@ for dff,vidf in zip(dt_frames,videos):
 	success,image = vidcap.read()
 	f=[]
 	for i in indexInt:		
-		print('Searching : ',i)
+		print('buscando : ',i)
 		if (vidcap.set(cv2.CAP_PROP_POS_FRAMES,i)):
 			ret, frame = vidcap.read()
 			f.append(frame)
@@ -117,28 +118,15 @@ for dff,vidf in zip(dt_frames,videos):
 	framesInterest.append(f)
 	num+=1
 
-
-# %% For show images
+# %%
 
 for lista in framesInterest:
 	for frame in lista:
-		print('Reading frames')
+		print('intentando mostrar el puto frame')
 		if len(frame):
-			cv2.imshow('Frames',cv2.pyrDown(cv2.pyrDown(frame)))
+			cv2.imshow('f',cv2.pyrDown(cv2.pyrDown(frame)))
 			if cv2.waitKey(0)==ord('q'):
 				break
-
+	
 cv2.destroyAllWindows()
-#plt.imsave("/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/gps/Controlcrecimiento/P{}.png".format(all),frame)
 #FrameInteres=vidcap.set(cv2.CAP_PROP_POS_FRAMES,minIndex)
-
-# %% To saving images
-
-cont=0
-for lista in framesInterest:
-	for frame in lista:
-		print('Saving frames')
-		if len(frame):
-			plt.imsave("/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/gps/Controlcrecimiento/P{}.png".format(cont),frame[:,:,::-1])
-		cont+=1
-		
