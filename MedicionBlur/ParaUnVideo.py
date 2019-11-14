@@ -22,6 +22,7 @@ counter=0
 Laplacian=[]
 while(cap.isOpened()):
   ret, frame = cap.read()
+  counter+=1
   lap=cv2.Laplacian(frame,cv2.CV_64F).var()
   Laplacian.append(lap)
 #  counter+=1
@@ -34,8 +35,9 @@ while(cap.isOpened()):
 
 cap.release()
 cv2.destroyAllWindows()
-elapsed_time = time() - start_time
-print("Elapsed time: %.10f seconds." % elapsed_time)
+#elapsed_time = time() - start_time
+#print("Elapsed time: %.10f seconds." % elapsed_time)
 
 plt.figure()
 plt.plt(Laplacian)
+elapsed_time= time()
