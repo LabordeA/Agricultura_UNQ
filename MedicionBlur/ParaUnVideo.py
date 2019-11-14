@@ -9,35 +9,35 @@ import cv2
 import numpy as np
 import time 
 import matplotlib.pyplot as plt 
+from glob import glob
 
-start_time = time.time()
-
-cap = cv2.VideoCapture("/home/braso/Escritorio/Videos calib 191113/DJI_0080.MP4")
-#cap=cv2.VideoCapture(0)
-# Check if camera opened successfully
-if (cap.isOpened()== True): 
-  print("Opening video stream or file")
-
-counter=0
-Laplacian=[]
-while(cap.isOpened()):
-  ret, frame = cap.read()
-  counter+=1
-  lap=cv2.Laplacian(frame,cv2.CV_64F).var()
-  Laplacian.append(lap)
+#start_time = time.time()
+videos=glob("/home/braso/Escritorio/Videos calib 191113/*.MP4")
+LapALL=[]
+for vid in videos :
+    cap = cv2.VideoCapture(vid)
+    if (cap.isOpened()== True): 
+        print("Opening video stream or file")
+    counter=0
+    Laplacian=[]
+    while(cap.isOpened()):
+        ret, frame = cap.read()
+        counter+=1
+        if( ret == True):
+            lap=cv2.Laplacian(frame,cv2.CV_64F).var()
+            Laplacian.append(lap)
 #  counter+=1
 #  img=cv2.resize(frame,(1240,640))
 ##  gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 #  cv2.imshow('frame',img)   
-  print("contador",counter)
-  if cv2.waitKey(1) & 0xFF == ord('q'):
-      break
+        print("contador",counter)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    LapALL.append(Laplacian)
+    cap.release()
+    cv2.destroyAllWindows()
 
-cap.release()
-cv2.destroyAllWindows()
 
-plt.figure()
-plt.plt(Laplacian)
-end_time= time.time()
-
-print("Elapsed time: %.10f seconds." % (end_time - start_time))
+#end_time= time.time()
+#
+#print("Elapsed time: %.10f seconds." % (end_time - start_time))
