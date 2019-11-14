@@ -7,10 +7,10 @@ Created on Sat Sep 28 16:46:10 2019
 
 import cv2
 import numpy as np
-from time import time 
+import time 
 import matplotlib.pyplot as plt 
 
-start_time = time()
+start_time = time.time()
 
 cap = cv2.VideoCapture("/home/braso/Escritorio/Videos calib 191113/DJI_0080.MP4")
 #cap=cv2.VideoCapture(0)
@@ -35,9 +35,9 @@ while(cap.isOpened()):
 
 cap.release()
 cv2.destroyAllWindows()
-#elapsed_time = time() - start_time
-#print("Elapsed time: %.10f seconds." % elapsed_time)
 
 plt.figure()
 plt.plt(Laplacian)
-elapsed_time= time()
+end_time= time.time()
+
+print("Elapsed time: %.10f seconds." % (end_time - start_time))
