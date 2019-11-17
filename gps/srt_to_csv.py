@@ -24,7 +24,7 @@ def srt2csv(path = '/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/gps/str'):
 		fil= open(thisSubtFile)
 		subt=fil.read().split('\n\n')
 	
-		df_subt = pd.DataFrame(columns = ['frameNumber','dateTime','lat','lon'])
+		df_subt = pd.DataFrame(columns = ['frameNumber','dateTime','shutter','lat','lon'])
 		for i in range(len(subt)):
 			l 			= subt[i].split('[')
 			if l[0] != '':
@@ -32,6 +32,7 @@ def srt2csv(path = '/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/gps/str'):
 				
 				datetime 	= ','.join(l0sp[-2].split(',')[:-1])
 				frNum 		= np.int32(l0sp[2].split(':')[1].split(',')[0])
+                shutter=
 				la 			= l[-2].replace(']','').replace(' ','').split(':')[-1]
 				lo 			= l[-1].replace(']','').replace(' ','').split(':')[-1].replace('</font>','')
 				df_subt = df_subt.append({'frameNumber':frNum,
