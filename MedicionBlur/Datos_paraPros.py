@@ -18,6 +18,13 @@ coun4=0
 coun6=0
 coun8=0
 
+
+
+
+
+
+
+
 for d in range(len(data)):
     if(3.5<=heights[d]<=4.5):
         coun4+=1
@@ -71,6 +78,7 @@ for d in range(len(data)):
             plt.plot(data[d],label="Shutter="+shutter[d])
             plt.legend()
             plt.title("laplacian matrix around all video ")
+            
 # %% FALTA MUCHO CARIÑO PERO ME HINCHE LOS HUEVOS 
 def promediarLista(lista):
     sum=0.0
