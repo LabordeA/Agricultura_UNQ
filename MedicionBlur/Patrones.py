@@ -9,22 +9,17 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt 
 from glob import glob
-import pandas as pd 
+#import pandas as pd 
 
 videos=glob("/home/braso/Escritorio/Videos calib 191113/*.MP4")
 videos.sort()
 strings=np.load('/home/braso/Agricultura_UNQ/MedicionBlur/shutters.npy')
 heights=np.round(np.load('/home/braso/Agricultura_UNQ/MedicionBlur/list_Height.npy'))
-
-
-# %%   Ver todo los videos con el umbral del patron
-
 starts=np.load('/home/braso/Agricultura_UNQ/MedicionBlur/starts.npy')
 ends=np.load('/home/braso/Agricultura_UNQ/MedicionBlur/ends.npy')
 
-for counter,file in enumerate(videos):
-    cap = cv2.VideoCapture(file)
-    print("Archivo=",file)
+def umbralContornos(counter):
+    umbral=0
     if(strings[counter]=="1/60."):
         umbral=200-((heights[counter]-min(heights))*5)
     if(strings[counter]=="1/120"):
@@ -33,7 +28,35 @@ for counter,file in enumerate(videos):
         umbral=120-((heights[counter]-min(heights))*5)
     if(strings[counter]=="1/160"):
         umbral=140
-    print("umbral",umbral)
+    return umbral
+
+def umbralArea(counter):
+    umbralA=0
+    if(heights[counter]==4):
+        umbralA=4000
+    if(heights[counter]==6):
+        umbralA=2000
+    if(heights[counter]==8):
+        umbralA=1000
+    return umbralA
+
+def dibujarRec(contornos,imagen,umbralA):
+    for cn in contornos:
+        x,y,w,h = cv2.boundingRect(cn)
+        rectangulo=imagen[y:y+h,x:x+w]
+        area=len(rectangulo)*len(rectangulo[0])
+        if(area>=umbralA):
+            cv2.rectangle(imagen,(x,y),(x+w,y+h),(127,0,0),2)
+    return imagen 
+# %%   Para ver todo los patrones en la ventana "Final"
+
+for counter,file in enumerate(videos):
+    cap = cv2.VideoCapture(file)
+    print("Archivo=",file)
+    umbral=umbralContornos(counter)
+    umbralA=umbralArea(counter)
+    print("umbral del Contorno",umbral)
+    print("umbral del Area",umbralA)
     print("Counter",counter)
     cap.set(cv2.CAP_PROP_POS_FRAMES,starts[counter]+40)
     cont=starts[counter]
@@ -46,7 +69,6 @@ for counter,file in enumerate(videos):
             img=cv2.resize(frame,(1240,640))
             cv2.imshow('frame',img)
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-            cv2.imshow('frame',img)
             ja,imgB=cv2.threshold(gray,umbral,255,cv2.THRESH_BINARY)
             kernel=np.array(([0,1,0],[1,1,1],[0,1,0]),np.uint8)
 #            kernel= np.ones([5,5])
@@ -54,6 +76,8 @@ for counter,file in enumerate(videos):
             imgC,cnt,hr=cv2.findContours(imgB,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
             cv2.drawContours(imgB,cnt,-1,(127,0,0),5)
             cv2.imshow("Contorno",imgB)
+            img=dibujarRec(cnt,img,umbralA)
+            cv2.imshow('Final',img)
             print('\r' , cap.get(cv2.CAP_PROP_POS_FRAMES),end='')
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
@@ -65,46 +89,47 @@ for counter,file in enumerate(videos):
 
 
 
-# %%
-def umbralDetection(counter):
-    umbral=0
+# %% Prueba de calcular laplaciano dentro del contorno de mayor jerarquia 
+    counter=0
+    file=videos[counter]
+    cap = cv2.VideoCapture(file)
+    print("Archivo=",file)
     if(strings[counter]=="1/60."):
-        umbral=190
+        umbral=200-((heights[counter]-min(heights))*5)
     if(strings[counter]=="1/120"):
-        umbral=150
+        umbral=160-((heights[counter]-min(heights))*5)
     if(strings[counter]=="1/240"):
-        umbral=110
+        umbral=120-((heights[counter]-min(heights))*5)
     if(strings[counter]=="1/160"):
-        umbral=110
-    return umbral 
+        umbral=140
+    print("umbral",umbral)
+    print("Counter",counter)
+    cap.set(cv2.CAP_PROP_POS_FRAMES,starts[counter]+200)
+    ret, frame = cap.read()
+    img=cv2.resize(frame,(1240,640))
+#    cv2.imshow('frame',img)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
+    ja,imgB=cv2.threshold(gray,umbral,255,cv2.THRESH_BINARY)
+    kernel=np.array(([0,1,0],[1,1,1],[0,1,0]),np.uint8)
+#            kernel= np.ones([5,5])
+    imgB=cv2.morphologyEx(imgB,cv2.MORPH_OPEN,kernel)
+    imgC,cnt,hr=cv2.findContours(imgB,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
+    cv2.drawContours(imgB,cnt,-1,(127,0,0),5)
+#    cv2.imshow("Contorno",imgB)
+    plt.figure('Frame')
+    plt.imshow(img[:,:,::-1])
+    plt.figure('contorno')
+    plt.imshow(imgB,'gray')
+    
+    for cn in cnt:
+        x,y,w,h = cv2.boundingRect(cn)
+        rectangulo=img[y:y+h,x:x+w]
+        area=len(rectangulo)*len(rectangulo[0])
+        if(area>=5000):
+            cv2.rectangle(img,(x,y),(x+w,y+h),(127,0,0),2)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    # Finally show the image
+    cv2.imshow('img',img)
 
 
 # %%
@@ -138,35 +163,7 @@ for vid in videos :
 #print("Elapsed time: %.10f seconds." % (end_time - start_time))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# %% Buscando el patron de puntos para hacer una mascara y calcular el laplaciano solo donde aparece el patron
+# %% Buscando el patron de puntos para hacer una mascara y calcular el laplaciano solo donde aparece el patron NO SIRVE!!!
 file=videos[28]
 cap = cv2.VideoCapture(file)
 #cap.set(cv2.CAP_PROP_POS_FRAMES,570)
