@@ -17,31 +17,35 @@ from glob import glob
 videos=glob("/home/braso/Escritorio/Videos calib 191113/*.MP4")
 videos.sort()
 LapALL=[]
+starts=np.load('/home/braso/Agricultura_UNQ/MedicionBlur/starts.npy')
+ends=np.load('/home/braso/Agricultura_UNQ/MedicionBlur/ends.npy')
 
-for vid in videos :
+
+for index,vid in enumerate(videos) :
+    print(vid)
+    print(index)
     cap = cv2.VideoCapture(vid)
     tamFrame=int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     if (cap.isOpened()== True): 
         print("Opening video stream or file")
-    counter=0
     Laplacian=[]
+    cap.set(cv2.CAP_PROP_POS_FRAMES,starts[index]+40)
+    cont=starts[index]
     while(cap.isOpened()):
         ret, frame = cap.read()
-        counter+=1
-        if( ret == True):
+        cont+=1
+        print('\r' , cap.get(cv2.CAP_PROP_POS_FRAMES),end='')
+        if (cont == ends[index]):
+            break
+        if( ret != False):
             lap=cv2.Laplacian(frame,cv2.CV_64F).var()
             Laplacian.append(lap)
-#  counter+=1
-#  img=cv2.resize(frame,(1240,640))
-##  gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-#  cv2.imshow('frame',img)   
-        print("contador",counter)
-        if tamFrame == counter:
-            break
+        else:
+            cap.release()
     LapALL.append(Laplacian)
-    cap.release()
-    cv2.destroyAllWindows()
+    print('\n')
 
+np.save('/home/braso/Agricultura_UNQ/MedicionBlur/Laplacian_ALLPITCHDOWN.npy',LapALL)
 
 #end_time= time.time()
 #

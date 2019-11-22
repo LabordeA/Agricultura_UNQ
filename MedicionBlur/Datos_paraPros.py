@@ -10,10 +10,13 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-data= np.load("/home/braso/Agricultura_UNQ/MedicionBlur/blur_allvideos.npy",allow_pickle=True)
+data1= np.load("/home/braso/Agricultura_UNQ/MedicionBlur/laplacian_80al89.npy",allow_pickle=True)
+data2= np.load("/home/braso/Agricultura_UNQ/MedicionBlur/laplacian_90al109.npy",allow_pickle=True)
+data=np.concatenate([data1,data2])
 vels=np.load("list_Vel.npy")
 heights=np.load("list_Height.npy")
 shutter=np.load("shutters.npy")
+
 coun4=0
 coun6=0
 coun8=0
