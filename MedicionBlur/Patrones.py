@@ -216,4 +216,15 @@ cv2.destroyAllWindows()
 
 
 
+#%%
+from mpl_toolkits import mplot3d
+from matplotlib import cm
+rectangulo=cv2.imread('/home/braso/Agricultura_UNQ/MedicionBlur/4m_1ms_240/133.png')
+gx,gy =np.meshgrid(np.arange(rectangulo.shape[0]),np.arange(rectangulo.shape[1]))
 
+rg = cv2.cvtColor(rectangulo,cv2.COLOR_RGB2GRAY)
+
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+
+ax.plot_surface(gx,gy,1-rg.T,cmap=cm.coolwarm)
