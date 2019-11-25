@@ -47,9 +47,9 @@ def dibujarRec(contornos,imagen,umbralA):
         area=len(rectangulo)*len(rectangulo[0])
         if(area>=umbralA):
             cv2.rectangle(imagen,(x,y),(x+w,y+h),(127,0,0),2)
-    return imagen 
+    return imagen,x,y,w,h 
 # %%   Para ver todo los patrones en la ventana "Final"
-
+LapALL=[]
 for counter,file in enumerate(videos):
     cap = cv2.VideoCapture(file)
     print("Archivo=",file)
@@ -60,6 +60,7 @@ for counter,file in enumerate(videos):
     print("Counter",counter)
     cap.set(cv2.CAP_PROP_POS_FRAMES,starts[counter]+40)
     cont=starts[counter]
+    Laplacian=[]
     while(cap.isOpened()):
         ret, frame = cap.read()
         cont+=1
@@ -76,7 +77,16 @@ for counter,file in enumerate(videos):
             imgC,cnt,hr=cv2.findContours(imgB,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
             cv2.drawContours(imgB,cnt,-1,(127,0,0),5)
             cv2.imshow("Contorno",imgB)
-            img=dibujarRec(cnt,img,umbralA)
+#            rect,x,y,w,h=dibujarRec(cnt,img,umbralA)
+            for cn in cnt:
+                x,y,w,h = cv2.boundingRect(cn)
+                rectangulo=img[y:y+h,x:x+w]
+                area=len(rectangulo)*len(rectangulo[0])
+                if(area>=umbralA):
+                    cv2.rectangle(img,(x,y),(x+w,y+h),(127,0,0),2)
+                    lap=cv2.Laplacian(rectangulo,cv2.CV_64F).var()
+                    Laplacian.append(lap)
+                    cv2.imshow('Patron',rectangulo)
             cv2.imshow('Final',img)
             print('\r' , cap.get(cv2.CAP_PROP_POS_FRAMES),end='')
             if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -85,9 +95,10 @@ for counter,file in enumerate(videos):
             cap.release()
     cap.release()
     cv2.destroyAllWindows()
+    LapALL.append(Laplacian)
     print('\n')
 
-
+#np.save('/home/braso/Agricultura_UNQ/MedicionBlur/laplacian_ONLYPATRONS.npy',LapALL)
 
 # %% Prueba de calcular laplaciano dentro del contorno de mayor jerarquia 
     counter=0
