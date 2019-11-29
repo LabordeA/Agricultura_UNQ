@@ -16,15 +16,17 @@ import matplotlib.pyplot as plt
 #path="/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/CorrecDeDist/"
 photo = "/home/braso/Agricultura_UNQ/CalibrateCamera/ParaCalibrar_4k_60/vlcsnap-2019-11-26-19h06m49s221.png"
 imgOrig = cv2.imread(photo)
-pars1 = np.load('/home/braso/Agricultura_UNQ/CalibrateCamera/ParaCalibrar_4k_60/camParameters.npy',allow_pickle=True).item()
-pars2=np.load('/home/braso/Agricultura_UNQ/CalibrateCamera/ParaCalibrar_4k_240/camParameters.npy',allow_pickle=True).item()
+pars1 = np.load('/home/braso/Agricultura_UNQ/CalibrateCamera/calibracion_1_60/camParameters1.npy',allow_pickle=True).item()
+pars2=np.load('/home/braso/Agricultura_UNQ/CalibrateCamera/calibracion_1_240/camParameters2.npy',allow_pickle=True).item()
+pars3 = np.load('/home/braso/Agricultura_UNQ/CalibrateCamera/calibracion_1_60/camParameters_dist.npy',allow_pickle=True).item()
+pars4=np.load('/home/braso/Agricultura_UNQ/CalibrateCamera/calibracion_1_240/camParameters_dist.npy',allow_pickle=True).item()
 
 #%% Corrigo distorción de imagen con parametros de la camara sacados en del script "calibracion.py"
-x=np.linspace(-.5,.5,200)
+x=np.linspace(-.7,.7, 200)
 
 
 def dist(x, distCoeffs, cameraMatrix):
-	r2=x**2
+	r2 = x**2
 	r4 = r2**2
 	r6 = r2*r4
 	k1, k2, p1, p2, k3 = distCoeffs.reshape(-1)
@@ -35,10 +37,10 @@ def dist(x, distCoeffs, cameraMatrix):
 
 
 
-u1 =dist(x,pars1['distCoeffs'],pars1['cameraMatrix'])
-u2 =dist(x,pars2['distCoeffs'],pars2['cameraMatrix'])
+u1 =dist(x,pars1['distCoeffs'],pars3['cameraMatrix'])
+u2 =dist(x,pars2['distCoeffs'],pars4['cameraMatrix'])
 
-plt.plot(x,u1)
+plt.plot(x,u1-u2)
 plt.plot(x,u2)
 
 
