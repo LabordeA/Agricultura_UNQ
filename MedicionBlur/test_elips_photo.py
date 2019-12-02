@@ -12,7 +12,7 @@ import glob
 import os 
 
 path='/home/braso/Agricultura_UNQ/MedicionBlur/'
-folder='8m_5ms_240/'
+folder='4m_4ms_120/'
 files=glob.glob(path+folder+'*.png')
 files.sort()
 
@@ -28,12 +28,12 @@ def createFoler(name):
 
 images=[]
 areas=[]
-outputDir=path+folder.replace('/','_')+'contoursRect'
-createFoler(outputDir)
+#outputDir=path+folder.replace('/','_')+'contoursRect'
+#createFoler(outputDir)
 for file in files :
 	img=cv2.imread(file)
 	gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-	ja,imgB=cv2.threshold(gray,0,255,cv2.THRESH_OTSU)
+	ja,imgB=cv2.threshold(gray,100,255,cv2.THRESH_BINARY)
 	imgC,cnt,hr=cv2.findContours(imgB,cv2.RETR_TREE,cv2.CHAIN_APPROX_NONE)
 #	cv2.drawContours(imgB,cnt,-1,(127,0,0),2)
 	for cn in cnt:
@@ -44,10 +44,10 @@ for file in files :
 			cv2.rectangle(imgB,(x,y),(x+w,y+h),(127,0,0),2)
 			areas.append(area)
 	images.append(imgB)
-	cv2.imwrite('{:s}/{:s}'.format(outputDir,file.split(path+folder)[1]),imgB)
+#	cv2.imwrite('{:s}/{:s}'.format(outputDir,file.split(path+folder)[1]),imgB)
 	print(file)
 
-np.save(outputDir+'/areas.npy',areas)
+#np.save(outputDir+'/areas.npy',areas)
 
 
 # %%
