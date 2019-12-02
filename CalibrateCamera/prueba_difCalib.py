@@ -40,7 +40,7 @@ def dist(x, distCoeffs, cameraMatrix):
 u1 =dist(x,pars1['distCoeffs'],pars3['cameraMatrix'])
 u2 =dist(x,pars2['distCoeffs'],pars4['cameraMatrix'])
 
-plt.plot(x,u1-u2)
+plt.plot(x,u1)
 plt.plot(x,u2)
 
 
