@@ -12,10 +12,18 @@ import numpy as np
 from numpy import savetxt
 import matplotlib.pyplot as plt
 
+from prettytable import PrettyTable
 
 
-
-
+def tabla(titulo='',lines=[]):
+	tablaBase = PrettyTable()
+	tablaBase.field_names =[' ','media','std']
+	tablaBase.float_format='.3'
+	if titulo!='':
+		tablaBase.title = titulo
+	for row in lines:
+		tablaBase.add_row(row)
+	return tablaBase
 
 
 fIdx = ([0,1],[0,1])
@@ -25,19 +33,19 @@ cIdx= ([0,1],[-1,-1])
 header = """\r\n
 	__________________________________________________________________________
 	 Carpeta: \t  {:s}
-	 __________________________________________________________________________
+	__________________________________________________________________________
 			Cantidad de archivos de calibración: \t {:d} \n
 """
 
-tabla="""
-   _____________________________________
-  |\t    {:s}  \t|
-  |_____________________________________|
-  |___|______media______|_______std_____|
-  | X |   {:.3f}\t|   {:.3f}\t|
-  | Y |   {:.3f}\t|   {:.3f}\t|
-  |_____________________________________|
-"""
+# tabla="""
+#    _____________________________________
+#   |\t    {:s}  \t|
+#   |_____________________________________|
+#   |___|______media______|_______std_____|
+#   | X |   {:.3f}\t|   {:.3f}\t|
+#   | Y |   {:.3f}\t|   {:.3f}\t|
+#   |_____________________________________|
+# """
 
 lMaker =lambda n,f :[n,f.mean(0)[0],f.std(0)[0], f.mean(0)[1],f.std(0)[1]] if\
 				 isinstance(n,str) else Exception
@@ -53,13 +61,15 @@ def getpars(folder = 'ParaCalibrar_4k_60/'):
 		f[i]  = cameraMatrix[fIdx]
 		c[i]  = cameraMatrix[cIdx]
 	
-	tablas = header.format(folder,len(files)) +'\r\n'+\
-		tabla.format(*lMaker('Distancias Focales',f))+'\r\n'+\
-		tabla.format(*lMaker('Centros de imagenes',c))
-	print(tablas)
+	focal = tabla('Distancia Focal',[['X',f.mean(0)[0],f.std(0)[0]],
+								['Y',f.mean(0)[1],f.std(0)[1]] ])
+	center = tabla('Centro De la Imagen',[['X',c.mean(0)[0],c.std(0)[0]],
+								['Y',c.mean(0)[1],c.std(0)[1]] ])
 	
 	with open('parametrosConMedia.txt','a') as file:
-		file.write(tablas)
+		file.write(header.format(folder,len(files)))
+		file.write(focal.get_string()+'\r\n')
+		file.write(center.get_string()+'\r\n')
 
 
 """Creo Y cierro el archivo, para no agregar otra vez todo"""
