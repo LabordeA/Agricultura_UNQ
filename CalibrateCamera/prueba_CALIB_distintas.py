@@ -22,9 +22,11 @@ fIdx = ([0,1],[0,1])
 cIdx= ([0,1],[-1,-1])
 
 
-header = """ Tabla generada automáticamente
-			Carpeta: \t  {:s}
-			Cantidad de archivos de calibración: \t {:d} \n\n
+header = """\r\n
+	__________________________________________________________________________
+	 Carpeta: \t  {:s}
+	 __________________________________________________________________________
+			Cantidad de archivos de calibración: \t {:d} \n
 """
 
 tabla="""
@@ -42,7 +44,6 @@ lMaker =lambda n,f :[n,f.mean(0)[0],f.std(0)[0], f.mean(0)[1],f.std(0)[1]] if\
 
 
 folders = glob.glob('*/')
-
 def getpars(folder = 'ParaCalibrar_4k_60/'):
 	files=glob.glob(folder +'CP_dist*.npy')
 	f = np.zeros([len(files),2])
@@ -53,7 +54,6 @@ def getpars(folder = 'ParaCalibrar_4k_60/'):
 		c[i]  = cameraMatrix[cIdx]
 	
 	tablas = header.format(folder,len(files)) +'\r\n'+\
-		'\r\n\r\n \t {:s}:\t'.format(folder) +'\r\n'+\
 		tabla.format(*lMaker('Distancias Focales',f))+'\r\n'+\
 		tabla.format(*lMaker('Centros de imagenes',c))
 	print(tablas)
@@ -64,6 +64,6 @@ def getpars(folder = 'ParaCalibrar_4k_60/'):
 
 """Creo Y cierro el archivo, para no agregar otra vez todo"""
 with open('parametrosConMedia.txt','w') as file:
-	pass
+	file.write('Tabla generada automáticamente\r\n\r\n')
 
 [getpars(f) for f in folders]

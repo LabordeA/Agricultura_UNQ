@@ -1,12 +1,13 @@
- Tabla generada automáticamente
-			Carpeta: 	  ParaCalibrar_4k_60/
+Tabla generada automáticamente
+
+
+
+	__________________________________________________________________________
+	 Carpeta: 	  ParaCalibrar_4k_60/
+	 __________________________________________________________________________
 			Cantidad de archivos de calibración: 	 20 
 
 
-
-
-
- 	 ParaCalibrar_4k_60/:	
 
    _____________________________________
   |	    Distancias Focales  	|
@@ -24,15 +25,14 @@
   | X |   1927.933	|   339.329	|
   | Y |   1257.694	|   220.874	|
   |_____________________________________|
- Tabla generada automáticamente
-			Carpeta: 	  calibracion_1_240/
+
+
+	__________________________________________________________________________
+	 Carpeta: 	  calibracion_1_240/
+	 __________________________________________________________________________
 			Cantidad de archivos de calibración: 	 21 
 
 
-
-
-
- 	 calibracion_1_240/:	
 
    _____________________________________
   |	    Distancias Focales  	|
@@ -50,15 +50,14 @@
   | X |   1976.581	|   111.585	|
   | Y |   1070.890	|   40.420	|
   |_____________________________________|
- Tabla generada automáticamente
-			Carpeta: 	  calibracion_1_60/
+
+
+	__________________________________________________________________________
+	 Carpeta: 	  calibracion_1_60/
+	 __________________________________________________________________________
 			Cantidad de archivos de calibración: 	 20 
 
 
-
-
-
- 	 calibracion_1_60/:	
 
    _____________________________________
   |	    Distancias Focales  	|
@@ -76,15 +75,14 @@
   | X |   1953.391	|   64.060	|
   | Y |   1203.035	|   142.410	|
   |_____________________________________|
- Tabla generada automáticamente
-			Carpeta: 	  ParaCalibrar_4k_240/
+
+
+	__________________________________________________________________________
+	 Carpeta: 	  ParaCalibrar_4k_240/
+	 __________________________________________________________________________
 			Cantidad de archivos de calibración: 	 20 
 
 
-
-
-
- 	 ParaCalibrar_4k_240/:	
 
    _____________________________________
   |	    Distancias Focales  	|
