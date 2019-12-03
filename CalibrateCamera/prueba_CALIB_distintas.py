@@ -13,18 +13,57 @@ from numpy import savetxt
 import matplotlib.pyplot as plt
 
 
-files=glob.glob('/home/braso/Agricultura_UNQ/CalibrateCamera/ParaCalibrar_4k_60/*.npy')
 
-f = []
-c =[]
-for file in files:
-	print(file)
-	calib=np.load(file,allow_pickle=True).item()
-	print(calib['cameraMatrix'])
-	f.append(calib['cameraMatrix'][0,0]) 
-	f.append(calib['cameraMatrix'][1,1])
-	c.append(calib['cameraMatrix'][0,-1])
-	c.append(calib['cameraMatrix'][1,-1])
 
-plt.plot(f[::2],'+')
-plt.plot(f[1::2],'o')
+
+
+
+fIdx = ([0,1],[0,1])
+cIdx= ([0,1],[-1,-1])
+
+
+header = """ Tabla generada automáticamente
+			Carpeta: \t  {:s}
+			Cantidad de archivos de calibración: \t {:d} \n\n
+"""
+
+tabla="""
+   _____________________________________
+  |\t    {:s}  \t|
+  |_____________________________________|
+  |___|______media______|_______std_____|
+  | X |   {:.3f}\t|   {:.3f}\t|
+  | Y |   {:.3f}\t|   {:.3f}\t|
+  |_____________________________________|
+"""
+
+lMaker =lambda n,f :[n,f.mean(0)[0],f.std(0)[0], f.mean(0)[1],f.std(0)[1]] if\
+				 isinstance(n,str) else Exception
+
+
+folders = glob.glob('*/')
+
+def getpars(folder = 'ParaCalibrar_4k_60/'):
+	files=glob.glob(folder +'CP_dist*.npy')
+	f = np.zeros([len(files),2])
+	c = np.zeros([len(files),2])
+	for i,file in enumerate(files):
+		cameraMatrix =np.load(file,allow_pickle=True).item()['cameraMatrix']
+		f[i]  = cameraMatrix[fIdx]
+		c[i]  = cameraMatrix[cIdx]
+	
+	tablas = header.format(folder,len(files)) +'\r\n'+\
+		'\r\n\r\n \t {:s}:\t'.format(folder) +'\r\n'+\
+		tabla.format(*lMaker('Distancias Focales',f))+'\r\n'+\
+		tabla.format(*lMaker('Centros de imagenes',c))
+	print(tablas)
+	
+	with open('parametrosConMedia.txt','a') as file:
+		file.write(tablas)
+
+
+"""Creo Y cierro el archivo, para no agregar otra vez todo"""
+with open('parametrosConMedia.txt','w') as file:
+	pass
+
+[getpars(f) for f in folders]

@@ -22,13 +22,13 @@ def generateCorners(folder,patternSize=(9,6),imageSize=(3840,2160)):
 
 	di = dict()
 	for idx,strfile in enumerate(images):
-		print(idx,' de ',len(images))
+		print('\r',idx,' de ',len(images),sep='')
 		img = cv2.imread(strfile, cv2.IMREAD_GRAYSCALE) # Lee una imagen en escala de grises
 		found, corners = cv2.findChessboardCorners(img, patternSize)
 		if found:
-			print(strfile+' Good')
+			print('\r\t',strfile+' Good',sep='')
 			di[idx] = (corners,strfile)
-	
+	print('\n')
 	np.save(folder + 'CornersEnImagenes.npy',di)
 
 
@@ -41,57 +41,68 @@ def generateCorners(folder,patternSize=(9,6),imageSize=(3840,2160)):
 
 folders = glob.glob('*/')
 folders.sort()
+
+findCuerners =False
+"""si quiero encontrar los corners cambioeste flag, sino los cargo"""
+if findCuerners:
+	for f in folders:
+		print(f)
+		generateCorners(f)
+
+cuerners = []
 for f in folders:
-	print(f)
-	generateCorners(f)
-
-
+	aux = np.load(f + 'CornersEnImagenes.npy',allow_pickle=True).item()
+	cuerners.append(aux)
 
 
 
 #%%
+	
+#folderOfInterest ='calibracion_1_240/'
+
+patternSize=(9,6)
+imageSize=(3840,2160)
+
+# Se arma un vector con la identificacion de cada cuadrito
+objp 		= np.zeros((6*9,3), np.float32)
+objp[:,:2] 	= np.mgrid[0:9, 0:6].T.reshape(-1, 2) #rellena las columnas 1 y 2
+
+nReals=20
+for folderOfInterest in folders:
+
+	fIndex = np.where([folderOfInterest==f for f in folders])[0][0]
+	
+	for i in range(nReals):
+		print('\r Realización: {:d} de {:d}'.format(i,nReals),end='')
+		corners 		= cuerners[fIndex]
+		lc 			= len(corners)
+		keys 		= [c for c in corners.keys()]
+		choices 		= np.random.choice(keys,np.int(lc/2))
+		imgpoints 	= [corners[c][0] for c in choices]
 
 
-# for i in range(20):
-# 	print(i)
-# 	imgs = np.random.choice(images,30)
-# 	corners = ()
-# # Se arma un vector con la identificacion de cada cuadrito
-# 	objp = np.zeros((6*9,3), np.float32)
-# 	objp[:,:2] = np.mgrid[0:9, 0:6].T.reshape(-1, 2) #rellena las columnas 1 y 2
 
+	
+		objpoints = []
+		for tp in imgpoints:
+			objpoints.append(objp)
 
-# 	# Arrays para almacenar los puntos de los objetos y los puntos de las imagenes .
-# 	objpoints = [] # puntos 3D en el mundo real
-# 	imgpoints = [] # puntos 2D en el plano de la imagen
-
-
-# 	# Encuentro corners en las imagenes
-# 	for strfile in imgs:
-# 		img = cv2.imread(strfile, cv2.IMREAD_GRAYSCALE) # Lee una imagen en escala de grises
-# 		found, corners = cv2.findChessboardCorners(img, patternSize)
-# 		if found:
-# 			print(strfile+' Good')
-# 			imgpoints.append(corners)
-# 			objpoints.append(objp)
-# 		else:
-# 			print(strfile + ' Bad')
-# 	
-
-
-# 	rvecs = ()
-# 	tvecs = ()
-# 	cameraMatrix = ()
-# 	distCoeffs =()
-
-
-# 	#flags =cv2.CALIB_ZERO_TANGENT_DIST+ cv2.CALIB_FIX_K1+ cv2.CALIB_FIX_K2+ cv2.CALIB_FIX_K3+cv2.CALIB_FIX_PRINCIPAL_POINT
-# 	flags=0
-
-# 	rms, cameraMatrix, distCoeffs, rvecs, tvecs = cv2.calibrateCamera(objpoints, 
-# 																   imgpoints, imageSize, cameraMatrix,
-# 																   distCoeffs, rvecs, tvecs, flags)
-
-# 	dic = {'cameraMatrix':cameraMatrix,'distCoeffs':distCoeffs,'rvecs':rvecs,'tvecs':tvecs}
-# 	np.save('/home/braso/Agricultura_UNQ/CalibrateCamera/calibracion_1_240/CP_dist'+str(i),dic)
-#np.save('C:/Users/BraianSoullier/Desktop/TAMIUSOULLIER/SCRIPS/CorrecDeDist/usbCamPars.npy',dic)
+	
+		rvecs 			= ()
+		tvecs 			= ()
+		cameraMatrix 	= ()
+		distCoeffs 		= ()
+	
+		flags 		= 0
+		returnKeys 	= ['rms','cameraMatrix','distCoeffs','rvecs','tvecs']
+		returns 		= cv2.calibrateCamera(	objpoints, imgpoints, imageSize, 
+											cameraMatrix, distCoeffs, rvecs, 
+											tvecs, flags)
+		
+		
+		dic = dict()
+		for key,val in zip(returnKeys,returns):
+			dic[key]= val 
+		np.save(folderOfInterest + 'CP_dist'+str(i),dic)
+	print('\r\n \t\t Saved At: {:s}'.format(folderOfInterest.strip('/')) )
+	#np.save('./CorrecDeDist/usbCamPars.npy',dic)
