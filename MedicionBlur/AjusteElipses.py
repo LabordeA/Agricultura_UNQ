@@ -85,16 +85,17 @@ def AdjustEllipses(path,folder):
 	if foundEllipses:
 		ejes = np.array([[q[1][0],q[1][1]] for q in elli]).T
 		plt.scatter(ejes[0],ejes[1],alpha=.3,label = folder)
+		#plt.plot(ejes[0]/ejes[1],label = folder)
 	else:
 		print('no se encontraron elipses en {:s}'.format(folder))
 
 plt.figure()
 [AdjustEllipses(path,folder) for folder in folders]
-plt.plot([0,12], [0, 12])
-plt.axis('equal')
+plt.plot([0,25], [0, 25],'b')
 plt.legend()
 plt.title('Ejes de las elipses ')
 plt.ylabel('Eje Mayor [pix]')
 plt.xlabel('Eje Menor [pix]')
-
+plt.xlim((-1,26))
+plt.ylim((-1,70))
 
