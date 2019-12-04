@@ -48,24 +48,27 @@ def AdjustEllipses(path,folder):
 	fileList.sort()
 	outputDir=path+folder.replace('/','_')+'contoursRect'
 	createFoler(outputDir)
-	
+	clahe = cv2.createCLAHE(clipLimit=3,tileGridSize=(5,5))
 	if len(fileList)==0:
 		Warning('No Hay archivos revisar nombre de\
 				   carpeta: {:s} \r\n Pasando....'.format(folder))
 		return None
 		
+	foundEllipses = False
+	areas 	= []
+	recs 	= []
+	elli 	= []
 	for file in fileList :
 		img 	= cv2.imread(file)
 		gray 	= cv2.cvtColor (img , 		 cv2.COLOR_BGR2GRAY)
+		gray=clahe.apply(gray)
 		_,imgB 	= cv2.threshold(gray,0, 255, cv2.THRESH_OTSU)
-		cv2.imshow('fr',imgB)
-		cv2.waitKey(0)
 		_,contours,_ = cv2.findContours(imgB,cv2.RETR_TREE,
 										cv2.CHAIN_APPROX_NONE)
 		
-		areas 	= []
-		recs 	= []
-		elli 	= []
+		cv2.imshow('fr',np.hstack([gray,imgB]))
+		cv2.waitKey(30)
+		
 		for cn in contours:
 			x,y,w,h 		= cv2.boundingRect(cn)
 			rectangulo 	= 255-gray[y:y+h,x:x+w]
@@ -75,19 +78,23 @@ def AdjustEllipses(path,folder):
 				recs. append(rectangulo)
 				elli. append(elips)
 				areas.append(area)
+				foundEllipses=True
 
 	data = {'rectangulos':recs,'elipses':elli,'areas':areas}
 	np.save(outputDir+'elipsesAjustadas',data)
-	
-	ejes = np.array([[q[1][0],q[1][1]] for q in elli]).T
-	plt.scatter(ejes[0],ejes[1],label = folder)
-	
+	if foundEllipses:
+		ejes = np.array([[q[1][0],q[1][1]] for q in elli]).T
+		plt.scatter(ejes[0],ejes[1],alpha=.3,label = folder)
+	else:
+		print('no se encontraron elipses en {:s}'.format(folder))
 
 plt.figure()
 [AdjustEllipses(path,folder) for folder in folders]
 plt.plot([0,12], [0, 12])
 plt.axis('equal')
 plt.legend()
-plt.title('resta de elipses')
+plt.title('Ejes de las elipses ')
+plt.ylabel('Eje Mayor [pix]')
+plt.xlabel('Eje Menor [pix]')
 
 
