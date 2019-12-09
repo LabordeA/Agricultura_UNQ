@@ -13,20 +13,34 @@ from numpy import savetxt
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# %%
-path 	= '/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/gps/'
 
-dt_frames=glob.glob(path+'CSV/*.csv')
-videos=glob.glob(path+'VIDEOS/*.MP4')
+from srt_to_csv import srt2csv
+
+# %%
+path 	= '/home/ulises/00_Doctorado/MedicionesDrone/'
+
+filExt = 'FAUBA*/'
+
+subtitulos = glob.glob(path+filExt)
+
+for subt in subtitulos:
+	srt2csv(subt)
+
+
+#%%
+
+dt_frames=glob.glob(path+filExt+'/**/'+'DJI_*.csv')
+videos=glob.glob(path+filExt+'/**/'+'*.MP4')
 
 
 # %%
 # Print de las coordenadas en el mundo de un punto de interes en la imagen
 
 A=np.load('tl_v2.npy')
-img=cv2.imread("/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/gps/fauba.jpg", cv2.IMREAD_GRAYSCALE)
+img=cv2.imread('/home/ulises/01_TPFs/Cuedo-Soullier/Agricultura_UNQ/CorrecDeDist/Edit_new.jpg', cv2.IMREAD_GRAYSCALE)
 plt.figure('Elegir Punto de interes ')
 plt.imshow(img,'gray')
+
 
 print('ELegir un punto de interés:\t\n',end=' ')
 cy1,cx1=np.array(np.round(plt.ginput()[0]),dtype=np.int32)
@@ -85,7 +99,8 @@ for dff,vidf in zip(dt_frames,videos):
 		print('buscando : ',i)
 		if (vidcap.set(cv2.CAP_PROP_POS_FRAMES,i)):
 			ret, frame = vidcap.read()
-			f.append(frame)
+			if ret == True:
+				f.append(frame)
 	vidcap.release()
 
 	framesInterest.append(f)

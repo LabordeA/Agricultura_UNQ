@@ -32,7 +32,6 @@ def srt2csv(path = '/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/gps/str'):
 				
 				datetime 	= ','.join(l0sp[-2].split(',')[:-1])
 				frNum 		= np.int32(l0sp[2].split(':')[1].split(',')[0])
-                shutter=
 				la 			= l[-2].replace(']','').replace(' ','').split(':')[-1]
 				lo 			= l[-1].replace(']','').replace(' ','').split(':')[-1].replace('</font>','')
 				df_subt = df_subt.append({'frameNumber':frNum,
