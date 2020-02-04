@@ -12,34 +12,48 @@ import numpy as np
 from numpy import savetxt
 import matplotlib.pyplot as plt
 import pandas as pd
-
+import os
 
 from srt_to_csv import srt2csv
 
-# %%
-path 	= '/home/ulises/00_Doctorado/MedicionesDrone/'
+def createFolder(name):
+	try:
+		os.listdir(name)
+		print('la carpeta {:s} existe'.format(name))
+	except:
+		os.mkdir(name)
+		print('la carpeta {:s} creada'.format(name))
 
+# %% Hacerlos solo si no tenes los CSV DE LOS SRT 
+path 	= '/media/braso/Elements/Facultad/TAMIU/TAMIUSOULLIER/'
+#/media/braso/Elements/Facultad/TAMIU/TAMIUSOULLIER
 filExt = 'FAUBA*/'
 
 subtitulos = glob.glob(path+filExt)
+subtitulos.sort()
 
 for subt in subtitulos:
 	srt2csv(subt)
 
 
-#%%
+#%% Correr para cargar los videos y los archivos csv que tiene el codigo
+path 	= '/media/braso/Elements/Facultad/TAMIU/TAMIUSOULLIER/'
+#/media/braso/Elements/Facultad/TAMIU/TAMIUSOULLIER
+filExt = 'FAUBA*/'
 
 dt_frames=glob.glob(path+filExt+'/**/'+'DJI_*.csv')
 videos=glob.glob(path+filExt+'/**/'+'*.MP4')
 
 
+
 # %%
 # Print de las coordenadas en el mundo de un punto de interes en la imagen
 
-A=np.load('tl_v2.npy')
-img=cv2.imread('/home/ulises/01_TPFs/Cuedo-Soullier/Agricultura_UNQ/CorrecDeDist/Edit_new.jpg', cv2.IMREAD_GRAYSCALE)
+A=np.load('/home/braso/Agricultura_UNQ/gps/tl_v2.npy')
+img=cv2.imread('/home/braso/Agricultura_UNQ/CorrecDeDist/Edit_new.jpg', cv2.IMREAD_GRAYSCALE)
 plt.figure('Elegir Punto de interes ')
 plt.imshow(img,'gray')
+allow_pickle=False
 
 
 print('ELegir un punto de interés:\t\n',end=' ')
@@ -56,6 +70,8 @@ print('Latitud y longitud :\t\n',np.round(Coord_Mundo,6))
 
 # %% Referenciar el punto de interes a un Frame del video para buscar la foto ampliada
 framesInterest =[]
+VideosInterest=[]
+IndexInteres=[]
 num = 0
 
 dt_frames 	= np.sort(dt_frames)
@@ -88,7 +104,12 @@ for dff,vidf in zip(dt_frames,videos):
 	latlon=np.sort(Dif.abs().values.sum(1))
 	indexInt=index[latlon<tol]
 	if(indexInt.size != 0):
-		indexInt=np.random.choice(indexInt,5)
+#		indexInt=np.random.choice(indexInt,10)
+		IndexInteres.append(indexInt)
+		VideosInterest.append(vidf)
+# Descomentar si queremos reducir el numero de imagenes
+#	if(indexInt.size != 0):
+#		indexInt=np.random.choice(indexInt,5)
 	#minIndex = Dif.abs().sum(1).idxmin()
 	
 	vidcap = cv2.VideoCapture(vidf)
@@ -105,16 +126,21 @@ for dff,vidf in zip(dt_frames,videos):
 
 	framesInterest.append(f)
 	num+=1
-
-# %%
-
-for lista in framesInterest:
-	for frame in lista:
-		print('Procesando')
-		if len(frame):
-			cv2.imshow('f',cv2.pyrDown(cv2.pyrDown(frame)))
-			if cv2.waitKey(0)==ord('q'):
-				break
 	
-cv2.destroyAllWindows()
+pathAlm='/home/braso/Agricultura_UNQ/gps/'+str(len(framesInterest))
+createFolder(pathAlm)
+np.save('/home/braso/Agricultura_UNQ/imgTools/_utils/videos_Stit.npy',VideosInterest)
+np.save('/home/braso/Agricultura_UNQ/imgTools/_utils/indices_Stit.npy',IndexInteres)
+
+##Descomentar para mostrar los frames
+#for idex,lista in enumerate(framesInterest):
+#	for idey,frame in enumerate(lista):
+#		print('Procesando')
+#		if len(frame):
+#			cv2.imshow('f',cv2.pyrDown(cv2.pyrDown(frame)))
+#			cv2.imwrite(pathAlm+'/'+str(idex)+'_'+str(idey)+'.PNG',frame)
+#			if cv2.waitKey(1)==ord('q'):
+#				break
+#
+#cv2.destroyAllWindows()
 #FrameInteres=vidcap.set(cv2.CAP_PROP_POS_FRAMES,minIndex)

@@ -9,21 +9,23 @@ Created on Thu Oct 17 16:30:00 2019
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-path="/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/Hough/"
+path="/home/braso/Agricultura_UNQ/Hough"
 #file= "/campoCortado.jpg"
 #file= "/frame4.jpg"
 file="/GI.jpg"
 #file="/santiago.jpg"
 file2="/RGB.jpg"
+file_prueba='/hough_prueba.png'
 
-img1 = cv2.imread(path+file2,cv2.IMREAD_GRAYSCALE)
+#img1 = cv2.imread(path+file2,cv2.IMREAD_GRAYSCALE)
 
-img=cv2.imread(path+file, cv2.IMREAD_GRAYSCALE)
+img=cv2.imread(path+file_prueba, cv2.IMREAD_GRAYSCALE)
+
 plt.figure()
 plt.imshow(img)
 
 
-ret, thresh = cv2.threshold(img1,90,255,0)
+ret, thresh = cv2.threshold(img,90,255,0)
 #thresh= np.uint8(255*(thresh-thresh.min()) / (thresh.max()-thresh.min()))
 
 
@@ -40,7 +42,7 @@ img=thresh
 # %%
 # Para una simulacion mala, comentar if y ejecutar cv2.HL con 300
 
-img1 = cv2.imread(path+file2)
+img1 = cv2.imread(path+file_prueba)
 
 
 #gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)

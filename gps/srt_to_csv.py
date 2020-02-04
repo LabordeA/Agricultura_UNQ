@@ -20,7 +20,7 @@ def srt2csv(path = '/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/gps/str'):
 	a0 = time()
 	srtFiles=glob.glob(path+'**/*.SRT')
 	for thisSubtFile in srtFiles:
-	
+		print(thisSubtFile)
 		fil= open(thisSubtFile)
 		subt=fil.read().split('\n\n')
 	
@@ -38,7 +38,6 @@ def srt2csv(path = '/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/gps/str'):
 								 'dateTime':pd.to_datetime(datetime),
 								 'lat':np.float(la),
 								 'lon':np.float(lo)},ignore_index=True)
-		print('tiempo parcial')
 		df_subt.to_csv(thisSubtFile.split('.SRT')[0]+'.csv')
 	
 	a1 = time()

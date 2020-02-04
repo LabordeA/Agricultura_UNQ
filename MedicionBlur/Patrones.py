@@ -119,7 +119,7 @@ for counter,file in enumerate(videos):
 
 #np.save('/home/braso/Agricultura_UNQ/MedicionBlur/laplacian_ONLYPATRONS.npy',LapALL)
 
-# %% Prueba de calcular laplaciano dentro del contorno de mayor jerarquia 
+q# %% Prueba de calcular laplaciano dentro del contorno de mayor jerarquia 
 	counter=0
 	file=videos[counter]
 	cap = cv2.VideoCapture(file)
