@@ -51,23 +51,14 @@ for i in range(1,5):
 pts_src=np.array(pts_src)
 pts_dst=np.array(pts_dst)
 h, status = cv2.findHomography(pts_src, pts_dst)
-im_out = cv2.warpPerspective(img[0], h, (img[1].shape[0],img[1].shape[0]))
+im_out = cv2.warpPerspective(img[0], h, (img[1].shape[1],img[1].shape[0]))
 cv2.imshow("Source Image", cv2.pyrDown(img[0]))
 cv2.imshow("Destination Image",cv2.pyrDown(img[1]))
 cv2.imshow("Warped Source Image",cv2.pyrDown(im_out))
 
-# Me falta ver como pego la imagen warpeada con la de destino, lo de abajo comentado es lo que hicimos con seba para el stitching
-#Pero no me da mas la cabeza y tengo noni
+res= (im_out/2)+(img[1]/2)
+plt.figure('Imagenes ALineadas')
+plt.imshow(res,'gray')
 
-aux=np.zeros(im_out.shape, dtype=np.uint8)
-aux[:img[0].shape[0], :img[0].shape[1]] =  img[0]
-mask = np.any(im_out != 0, axis=1)
-Kernel=np.ones([3,3],dtype=np.uint8)
-mask=np.uint8(mask)
-mask=cv2.erode(mask,Kernel) != 0
-aux[mask] = im_out[mask]
 
-plt.figure()
-plt.imshow(aux)
-plt.title('Stitching')
 
