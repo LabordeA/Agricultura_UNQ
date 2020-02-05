@@ -13,8 +13,8 @@ from glob import glob
 surf = cv2.xfeatures2d.SURF_create()
 
 
-folder = "/home/braso/Agricultura_UNQ/CodigosStiching/Frames/*.jpg"
-#folder='/home/braso/Agricultura_UNQ/gps/Para SURF/*.PNG'
+#folder = "/home/braso/Agricultura_UNQ/CodigosStiching/Frames/*.jpg"
+folder='/home/braso/Agricultura_UNQ/gps/Para SURF/*.PNG'
 files =glob(folder)
 files.sort()
 
@@ -26,6 +26,8 @@ for file in files:
     print()
     img.append(cv2.imread(file))
 
+img[0]=img[0][210:,0:1346,:]
+img[1]=img[1][:,0:1346,:]
 
 bf = cv2.BFMatcher() # Creo objeto BFMatcher
 (kp0,des0)=surf.detectAndCompute(img[0],None)
@@ -34,13 +36,15 @@ desOld=des0
 H_ac=np.eye(3)
 stit=[]
 stit.append(img[0])
+imShape=img[0].shape
 for i in range(1,len(img)):
+    print(i)
     kp, des = surf.detectAndCompute(img[i],None) # Saco descriptores en segunda imagen
     matches = bf.knnMatch(des,desOld, k=2)  # Hago los matches de los des1 y des2 
     # Realizo selección de matches de descriptores
     good = []
     for m in matches:
-        if m[0].distance < 0.4*m[1].distance:
+        if m[0].distance < 0.75*m[1].distance:
             good.append(m)
             matches = np.asarray(good)
 
@@ -54,9 +58,9 @@ for i in range(1,len(img)):
     else:
         raise RuntimeError ('Error Faltan Keypoints')
 #Key points SURF
-#    plt.figure()
-#    plt.imshow(np.vstack((img_,img)))
-#    plt.plot([p1[0],p2[0]],[p1[1] ,p2[1]+imShape[0]],'r',linewidth=3,alpha=.3)
+    plt.figure()
+    plt.imshow(np.vstack((img[0],img[1])))
+    plt.plot([p1[0],p2[0]],[p1[1] ,p2[1]+imShape[0]],'r',linewidth=3)
     dst = cv2.warpPerspective(img[i],H_ac,(np.uint64(stit[i-1].shape[1]+H_ac[0,2]),np.uint64(stit[i-1].shape[0]-H_ac[1,2])))
     plt.figure()
     plt.imshow(dst)
