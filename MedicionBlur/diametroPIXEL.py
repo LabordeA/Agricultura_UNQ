@@ -40,8 +40,8 @@ for i in deltaT:
 		ejeX=i*j
 		deltaP_x=(fx/hx)*(ejeX)
 		deltaP_y=(fy/hy)*(ejeX)
-		plt.figure('Dist_X');plt.plot(ejeX,deltaP_x,'+');plt.title('DELTA_X vs VEL*DELTA_T');plt.xlabel('v*delta_T');plt.ylabel('DeltaPix_x')
-		plt.figure('Dist_Y');plt.plot(ejeX,deltaP_y,'o');plt.title('DELTA_Y vs VEL*DELTA_T');plt.xlabel('v*delta_T');plt.ylabel('DeltaPix_y')
+		plt.figure('Dist_X');plt.plot(ejeX,deltaP_x,'o',3);plt.title('DELTA_X vs VEL*DELTA_T');plt.xlabel('v*delta_T');plt.ylabel('DeltaPix_x')
+		plt.figure('Dist_Y');plt.plot(ejeX,deltaP_y,'o',3);plt.title('DELTA_Y vs VEL*DELTA_T');plt.xlabel('v*delta_T');plt.ylabel('DeltaPix_y')
 		
 
 for k in vels:
@@ -51,9 +51,9 @@ for k in vels:
 	dist_Y_60=(fy/hy)*deltaT[0]*k
 	dist_Y_120=(fy/hy)*deltaT[1]*k
 	dist_Y_240=(fy/hy)*deltaT[2]*k
-	plt.figure('Dist_X_60');plt.plot(k,dist_X_60,'+');plt.title('DELTA_X vs VEL');plt.xlabel('v');plt.ylabel('DeltaPix_x')
-	plt.figure('Dist_X_120');plt.plot(k,dist_X_120,'+');plt.title('DELTA_Y vs VEL');plt.xlabel('v');plt.ylabel('DeltaPix_x')
-	plt.figure('Dist_X_240');plt.plot(k,dist_X_240,'+');plt.title('DELTA_X vs VEL');plt.xlabel('v');plt.ylabel('DeltaPix_x')
+	plt.figure('Dist_X_60');plt.plot(k,dist_X_60,'o',3);plt.title('DELTA_X vs VEL');plt.xlabel('v');plt.ylabel('DeltaPix_x')
+	plt.figure('Dist_X_120');plt.plot(k,dist_X_120,'o',3);plt.title('DELTA_Y vs VEL');plt.xlabel('v');plt.ylabel('DeltaPix_x')
+	plt.figure('Dist_X_240');plt.plot(k,dist_X_240,'o',3);plt.title('DELTA_X vs VEL');plt.xlabel('v');plt.ylabel('DeltaPix_x')
 	plt.figure('Dist_Y_60');plt.plot(k,dist_Y_60,'o');plt.title('DELTA_Y vs VEL');plt.xlabel('v');plt.ylabel('DeltaPix_Y')
 	plt.figure('Dist_Y_120');plt.plot(k,dist_Y_120,'o');plt.title('DELTA_Y vs VEL');plt.xlabel('v');plt.ylabel('DeltaPix_Y')
 	plt.figure('Dist_Y_240');plt.plot(k,dist_Y_240,'o');plt.title('DELTA_Y vs VEL');plt.xlabel('v');plt.ylabel('DeltaPix_Y')

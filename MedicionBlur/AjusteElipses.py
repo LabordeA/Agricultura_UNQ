@@ -27,11 +27,11 @@ import os
 # files=glob.glob(path+folder+'*.png')
 # files.sort()
 
-path=''
+path='/home/braso/Agricultura_UNQ/MedicionBlur/'
 #
-#folders=[ '4m_1ms_60/','4m_1ms_120/','4m_1ms_240/',
-#		  '4m_4ms_60/','4m_4ms_120/','4m_4ms_240/',
-#		  '4m_5ms_60/','4m_5ms_120/','4m_5ms_240/']
+folders=[ '4m_1ms_60/','4m_1ms_120/','4m_1ms_240/',
+		  '4m_4ms_60/','4m_4ms_120/','4m_4ms_240/',
+		  '4m_5ms_60/','4m_5ms_120/','4m_5ms_240/']
 
 #
 #folders=[ '6m_1ms_60/','6m_1ms_120/','6m_1ms_240/',
@@ -39,10 +39,10 @@ path=''
 #		  '6m_5ms_60/','6m_5ms_120/','6m_5ms_240/']
 #
 
-folders=[ '8m_1ms_60/','8m_1ms_120/','8m_1ms_240/',
-		  '8m_4ms_60/','8m_4ms_120/','8m_4ms_240/',
-		  '8m_5ms_60/','8m_5ms_120/','8m_5ms_240/']
-
+#folders=[ '8m_1ms_60/','8m_1ms_120/','8m_1ms_240/',
+#		  '8m_4ms_60/','8m_4ms_120/','8m_4ms_240/',
+#		  '8m_5ms_60/','8m_5ms_120/','8m_5ms_240/']
+#
 
 
 def createFoler(name):
@@ -59,7 +59,9 @@ def AdjustEllipses(path,folder):
 	fileList=glob.glob(path+folder+'*.png')
 	fileList.sort()
 	outputDir=path+folder.replace('/','_')+'contoursRect'
+#	outputDir2=path+folder.replace('/','_')+'contoursRect'+'_informe'
 	createFoler(outputDir)
+#	createFoler(outputDir2)
 	clahe = cv2.createCLAHE(clipLimit=3,tileGridSize=(5,5))
 	if len(fileList)==0:
 		Warning('No Hay archivos revisar nombre de\
@@ -70,6 +72,7 @@ def AdjustEllipses(path,folder):
 	areas 	= []
 	recs 	= []
 	elli 	= []
+	cont=0
 	for file in fileList :
 		img 	= cv2.imread(file)
 		gray 	= cv2.cvtColor (img , 		 cv2.COLOR_BGR2GRAY)
@@ -77,10 +80,9 @@ def AdjustEllipses(path,folder):
 		_,imgB 	= cv2.threshold(gray,0, 255, cv2.THRESH_OTSU)
 		_,contours,_ = cv2.findContours(imgB,cv2.RETR_TREE,
 										cv2.CHAIN_APPROX_NONE)
-		
 		cv2.imshow('fr',np.hstack([gray,imgB]))
 		cv2.waitKey(30)
-		
+#		cv2.imwrite(outputDir2+'/'+str(cont)+'.png',imgConcate)
 		for cn in contours:
 			x,y,w,h 		= cv2.boundingRect(cn)
 			rectangulo 	= 255-gray[y:y+h,x:x+w]
@@ -91,7 +93,7 @@ def AdjustEllipses(path,folder):
 				elli. append(elips)
 				areas.append(area)
 				foundEllipses=True
-
+		cont= cont + 1
 	data = {'rectangulos':recs,'elipses':elli,'areas':areas}
 	np.save(outputDir+'elipsesAjustadas',data)
 	if foundEllipses:

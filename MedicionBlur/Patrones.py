@@ -73,7 +73,7 @@ for counter,file in enumerate(videos):
 							'm_'+str(int(vels[counter])).replace('.','')+\
 							'ms_'+shutter_strings[counter].split('/')[-1].replace('.','')
 	createFoler(outputDir)
-	cap.set(cv2.CAP_PROP_POS_FRAMES,starts[counter]+40)
+	cap.set(cv2.CAP_PROP_POS_FRAMES,starts[counter]+79)
 	cont=starts[counter]
 	Laplacian=[]
 	while(cap.isOpened()):
@@ -119,7 +119,7 @@ for counter,file in enumerate(videos):
 
 #np.save('/home/braso/Agricultura_UNQ/MedicionBlur/laplacian_ONLYPATRONS.npy',LapALL)
 
-q# %% Prueba de calcular laplaciano dentro del contorno de mayor jerarquia 
+# %% Prueba de calcular laplaciano dentro del contorno de mayor jerarquia 
 	counter=0
 	file=videos[counter]
 	cap = cv2.VideoCapture(file)

@@ -24,10 +24,11 @@ for n,i in enumerate(vels):
 vels_string=vels.astype('U')
 
 for d in range(len(data)):
-            plt.figure('Fligth over' + heights_string[d] +'meters altitud at '+ vels_string[d])
-            plt.plot(data[d],label="Shutter:"+shutter[d])
-            plt.legend()
-            plt.title("laplacian matrix around the patrons")
+	if (d  !=  9) and (d != 10) and (d !=  11) :
+		plt.figure('Fligth over' + heights_string[d] +'meters altitud at '+ vels_string[d])
+		plt.plot(data[d],label="Shutter:"+shutter[d])
+		plt.legend()
+		plt.title("laplacian matrix around the patrons")
 
 
 # %% PLOTEO EL BLUR DEJANDO FIJO LA ALTURA Y LA SHUTTER, Y VARIO LA VELOCIDAD
@@ -35,6 +36,7 @@ for d in range(len(data)):
 vels_string=vels.astype('U')
 heights_string = heights.astype('U')
 for d in range(len(data)):
+	if (d  !=  9) and (d != 10) and (d !=  11) :
             plt.figure('Fligth over' + heights_string[d] +'meters altitud with shutter '+ shutter[d])
             plt.plot(data[d],label="Velocity:"+vels_string[d])
             plt.legend()

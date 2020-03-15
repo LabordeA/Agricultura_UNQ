@@ -24,7 +24,7 @@ v0=p0[1]
 lat0_deg=p0[2]
 lon0_deg=p0[3]
 
-img=cv2.imread("/home/braso/Documentos/TAMIU/TAMIUSOULLIER/SCRIPS/gps/fauba.jpg", cv2.IMREAD_GRAYSCALE)
+img=cv2.imread("/home/braso/Agricultura_UNQ/CorrecDeDist/Edit_new.jpg", cv2.IMREAD_GRAYSCALE)
 plt.figure('Seleccionar campo de trabajo')
 plt.imshow(img,'gray')
 
