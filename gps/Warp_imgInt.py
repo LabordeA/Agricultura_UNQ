@@ -31,7 +31,7 @@ pts_dst=[]
 
 # Selecciona 4 puntos iguales en cada foto, elegis uno en una y el mismo en la otra. 
 # Asi hasta completar 4 veces(Trato de que sea las 4 esquinas de una parcela)
-for i in range(1,5):
+for i in range(1,4):
 	print(i)
 	plt.figure('Seleccionar puntos imagen 1')
 	plt.imshow(img[0],'gray')
@@ -47,7 +47,7 @@ for i in range(1,5):
 	pts_dst.append([cx2,cy2])
 	
 	
-# %% Hago el warpeo
+# %% Transformacion con Homografia , CAMBIAR EL FOR de arriba para que agarre 4 puntos. 
 pts_src=np.array(pts_src)
 pts_dst=np.array(pts_dst)
 h, status = cv2.findHomography(pts_src, pts_dst)
@@ -60,5 +60,17 @@ res= (im_out/2)+(img[1]/2)
 plt.figure('Imagenes ALineadas')
 plt.imshow(res,'gray')
 
+# %% Transformacion AFFINE con 3 puntos, sin tener encuenta cambios de amplitud solo traslacion
+pts_src=np.array(np.float32(pts_src))
+pts_dst=np.array(np.float32(pts_dst))
+M = cv2.getAffineTransform(pts_src,pts_dst)
+im_out = cv2.warpAffine(img[0], M, (img[1].shape[1],img[1].shape[0]))
+cv2.imshow("Source Image", cv2.pyrDown(img[0]))
+cv2.imshow("Destination Image",cv2.pyrDown(img[1]))
+cv2.imshow("Warped Source Image",cv2.pyrDown(im_out))
+
+res= (im_out/2)+(img[1]/2)
+plt.figure('Imagenes ALineadas')
+plt.imshow(res,'gray')
 
 

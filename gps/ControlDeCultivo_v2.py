@@ -103,13 +103,13 @@ for dff,vidf in zip(dt_frames,videos):
 	index=np.argsort(Dif.abs().values.sum(1))
 	latlon=np.sort(Dif.abs().values.sum(1))
 	indexInt=index[latlon<tol]
-	if(indexInt.size != 0):
-#		indexInt=np.random.choice(indexInt,10)
-		IndexInteres.append(indexInt)
-		VideosInterest.append(vidf)
-# Descomentar si queremos reducir el numero de imagenes
 #	if(indexInt.size != 0):
-#		indexInt=np.random.choice(indexInt,5)
+##		indexInt=np.random.choice(indexInt,10)
+#		IndexInteres.append(indexInt)
+#		VideosInterest.append(vidf)
+# Descomentar si queremos reducir el numero de imagenes
+	if(indexInt.size != 0):
+		indexInt=np.random.choice(indexInt,20)
 	#minIndex = Dif.abs().sum(1).idxmin()
 	
 	vidcap = cv2.VideoCapture(vidf)
@@ -129,18 +129,18 @@ for dff,vidf in zip(dt_frames,videos):
 	
 pathAlm='/home/braso/Agricultura_UNQ/gps/'+str(len(framesInterest))
 createFolder(pathAlm)
-np.save('/home/braso/Agricultura_UNQ/imgTools/_utils/videos_Stit.npy',VideosInterest)
-np.save('/home/braso/Agricultura_UNQ/imgTools/_utils/indices_Stit.npy',IndexInteres)
+#np.save('/home/braso/Agricultura_UNQ/imgTools/_utils/videos_Stit.npy',VideosInterest)
+#np.save('/home/braso/Agricultura_UNQ/imgTools/_utils/indices_Stit.npy',IndexInteres)
 
 ##Descomentar para mostrar los frames
-#for idex,lista in enumerate(framesInterest):
-#	for idey,frame in enumerate(lista):
-#		print('Procesando')
-#		if len(frame):
-#			cv2.imshow('f',cv2.pyrDown(cv2.pyrDown(frame)))
-#			cv2.imwrite(pathAlm+'/'+str(idex)+'_'+str(idey)+'.PNG',frame)
-#			if cv2.waitKey(1)==ord('q'):
-#				break
-#
-#cv2.destroyAllWindows()
+for idex,lista in enumerate(framesInterest):
+	for idey,frame in enumerate(lista):
+		print('Procesando')
+		if len(frame):
+			cv2.imshow('f',cv2.pyrDown(cv2.pyrDown(frame)))
+			cv2.imwrite(pathAlm+'/'+str(idex)+'_'+str(idey)+'.PNG',frame)
+			if cv2.waitKey(1)==ord('q'):
+				break
+
+cv2.destroyAllWindows()
 #FrameInteres=vidcap.set(cv2.CAP_PROP_POS_FRAMES,minIndex)

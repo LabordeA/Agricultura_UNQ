@@ -13,10 +13,10 @@ from numpy import savetxt
 import matplotlib.pyplot as plt
 
 # ruta = r"C:\Users\BraianSoullier\Desktop\TAMIUSOULLIER\SCRIPS\ClasVerde\imgEdit.jpg"
-path="/home/nicolascuedo/Escritorio/TAMIU_Octubre/SCRIPS/ClasVerde/"
-
-photo = "Edit_new.jpg"
-imgT = cv2.imread(path+photo)
+path="/home/braso/Agricultura_UNQ/CorrecDeDist/Edit_new.jpg"
+#
+#photo = "Edit_new.jpg"
+imgT = cv2.imread(path)
 
 # %% Color verde en RGB
 

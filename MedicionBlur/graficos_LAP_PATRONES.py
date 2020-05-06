@@ -42,3 +42,34 @@ for d in range(len(data)):
             plt.legend()
             plt.title("laplacian matrix around the patrons")
 
+# %%  Graficos para el informe del TPF
+vels=np.round(vels)
+heights_string = heights.astype('U')
+for n,i in enumerate(vels):
+    if i==3:
+        vels[n]=4
+vels_string=vels.astype('U')
+
+for d in range(len(data)):
+	if (d  !=  9) and (d != 10) and (d !=  11) :
+		
+		plt.figure('Fligth over' + heights_string[d] +'meters altitud at '+ vels_string[d])
+		plt.plot(data[d],linewidth = 3.0,label="Shutter:"+shutter[d])
+		plt.xlabel('Frames',fontsize="x-large")
+		plt.ylabel('Varianza del Laplaciano',fontsize="x-large")
+		plt.legend(loc=1,fontsize="xx-large")
+		plt.title('Volando a ' + heights_string[d] +'m a una velocidad de '+ vels_string[d]+' m/s',fontsize="x-large")
+		
+		plt.figure('Fligth over' + heights_string[d] +'meters altitud at '+ shutter[d])
+		plt.plot(data[d],linewidth = 3.0,label="Vel:"+ vels_string[d]+' m/s')
+		plt.xlabel('Frames',fontsize="x-large")
+		plt.ylabel('Varianza del Laplaciano',fontsize="x-large")
+		plt.legend(loc=1,fontsize="xx-large")
+		plt.title('Volando a ' + heights_string[d] +'m con un Shutter speed de '+ shutter[d],fontsize="x-large")
+		
+		plt.figure('Variando el shutter' + shutter[d] +'meters altitud at '+ vels_string[d])
+		plt.plot(data[d],linewidth = 3.0,label="Altura:"+ heights_string[d]+' m')
+		plt.xlabel('Frames',fontsize="x-large")
+		plt.ylabel('Varianza del Laplaciano',fontsize="x-large")
+		plt.legend(loc=1,fontsize="xx-large")
+		plt.title('Volando con shutter speed de ' + shutter[d] +' a una velocidad de '+ vels_string[d]+' m/s',fontsize="x-large")
